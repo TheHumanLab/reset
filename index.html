@@ -10,109 +10,148 @@
 
 <style>
 
+/* BASE */
 body {
   margin: 0;
-  background: #f4f1ec;
-  color: #111;
+  background: #0d0d0d;
+  color: #eaeaea;
   font-family: 'Inter', sans-serif;
 }
 
-/* GLOBAL */
-.container {
+/* TOP BAR */
+.topbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #ffffff;
+  border-bottom: 1px solid #eee;
+  z-index: 1000;
+}
+
+.topbar-inner {
   max-width: 1200px;
   margin: auto;
-  padding: 80px 20px;
+  padding: 18px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 14px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  color: #111;
+}
+
+.nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #555;
+  font-size: 14px;
+}
+
+.nav a:hover {
+  color: #000;
+}
+
+.nav-cta {
+  background: #111;
+  color: white;
+  padding: 10px 16px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* LAYOUT */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 120px 20px;
+  text-align: center;
+}
+
+.hero {
+  margin-top: 80px;
 }
 
 h1, h2 {
   font-family: 'Playfair Display', serif;
-  font-weight: 500;
+  letter-spacing: -0.5px;
 }
 
-/* HERO */
-.hero {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
-}
-
-.hero h1 {
+h1 {
   font-size: 52px;
-  line-height: 1.2;
+  margin-bottom: 10px;
 }
 
-.hero p {
-  color: #555;
+h2 {
+  font-size: 34px;
+}
+
+p {
+  color: #aaa;
   font-size: 18px;
 }
 
+/* BUTTON */
 .btn {
   display: inline-block;
   margin-top: 25px;
-  padding: 14px 28px;
-  background: #111;
-  color: white;
+  padding: 16px 32px;
+  background: white;
+  color: black;
   text-decoration: none;
   transition: 0.3s;
 }
 
 .btn:hover {
-  opacity: 0.85;
+  transform: translateY(-2px);
+  opacity: 0.9;
 }
 
-.hero img {
+/* IMAGE */
+img {
   width: 100%;
+  max-width: 600px;
+  margin-top: 40px;
 }
 
-/* STRIP */
-.strip {
-  background: #e9e4dc;
+/* SECTIONS */
+.section {
+  padding: 120px 20px;
 }
 
-.strip-grid {
-  display: grid;
-  grid-template-columns: repeat(4,1fr);
-  gap: 40px;
-  text-align: center;
+.section-soft {
+  background: #141414;
 }
 
-.icon {
-  margin-bottom: 10px;
-}
-
-/* SECTION DARK */
-.dark {
-  background: #111;
-  color: white;
-}
-
-.dark p {
-  color: #aaa;
+.section-dark {
+  background: #0a0a0a;
 }
 
 /* GRID */
 .grid {
   display: grid;
-  grid-template-columns: repeat(4,1fr);
-  gap: 20px;
+  gap: 30px;
+  margin-top: 50px;
 }
 
+.grid-4 {
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+}
+
+/* CARD */
 .card {
-  background: white;
-  padding: 20px;
-}
-
-/* PROCESS */
-.process {
-  text-align: center;
+  border-bottom: 1px solid #222;
+  padding: 20px 0;
 }
 
 /* CTA */
 .cta {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
+  text-align: center;
+  padding: 120px 20px;
+  background: #0a0a0a;
 }
 
 .price {
@@ -120,18 +159,10 @@ h1, h2 {
   margin: 15px 0;
 }
 
-/* ANIMATION */
-.fade {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeUp 0.8s ease forwards;
-}
-
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* SMALL TEXT */
+.small {
+  color: #777;
+  font-size: 14px;
 }
 
 </style>
@@ -139,124 +170,144 @@ h1, h2 {
 
 <body>
 
-<!-- HERO -->
-<div class="container hero fade">
+<!-- TOP BAR -->
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="logo">THE HUMAN STACK™</div>
 
-  <div>
-    <h1>Unsubscribe from Chaos.</h1>
-    <p>Human Buffering Complete. You're Back Online.</p>
+    <nav class="nav">
+      <a href="#how">How It Works</a>
+      <a href="#inside">Inside</a>
+    </nav>
 
-    <p>A simple 10-minute system to clear your mind and stay focused daily.</p>
-
-    <a href="https://buy.stripe.com/YOUR-LINK" class="btn" target="_blank">
-      Start Your Reset →
+    <a href="https://buy.stripe.com/YOUR-LINK" class="nav-cta" target="_blank">
+      Start Your Reset
     </a>
+  </div>
+</header>
 
-    <p>$39/month • Cancel anytime</p>
+<!-- HERO -->
+<div class="container hero">
+
+  <h1>Unsubscribe from Chaos.</h1>
+  <p>Human Buffering Complete. You're Back Online.</p>
+
+  <p>A 10-minute system to reduce stress, clear your mind, and stay focused daily.</p>
+
+  <a class="btn" href="https://buy.stripe.com/YOUR-LINK" target="_blank">
+    Start Your Reset →
+  </a>
+
+  <p class="small">$39/month • Cancel anytime • 10 minutes a day</p>
+
+  <img src="product.jpg" alt="The Human Stack product">
+
+</div>
+
+<!-- PROBLEM -->
+<div class="section section-dark">
+
+  <div class="container">
+
+    <h2>You’re not lazy. You’re overloaded.</h2>
+
+    <p>Your mind is constantly switching between tasks, decisions, and expectations.</p>
+    <p><strong>You don’t need more time. You need less mental noise.</strong></p>
+
   </div>
 
-  <div>
+</div>
+
+<!-- HOW IT WORKS -->
+<div class="section section-soft" id="how">
+
+  <div class="container">
+
+    <h2>How It Works</h2>
+
+    <div class="grid grid-4">
+
+      <div class="card">
+        <strong>Reset Daily</strong>
+        <p>Clear mental clutter in minutes.</p>
+      </div>
+
+      <div class="card">
+        <strong>Understand Patterns</strong>
+        <p>See how your mind reacts under pressure.</p>
+      </div>
+
+      <div class="card">
+        <strong>Interrupt Loops</strong>
+        <p>Stop overthinking and stress cycles.</p>
+      </div>
+
+      <div class="card">
+        <strong>Stay Clear</strong>
+        <p>Operate with focus and control.</p>
+      </div>
+
+    </div>
+
     <img src="product.jpg">
+
   </div>
 
 </div>
 
-<!-- PROBLEM STRIP -->
-<div class="strip fade">
-  <div class="container strip-grid">
+<!-- FIRST EXPERIENCE -->
+<div class="section section-dark">
 
-    <div>
-      <div class="icon">🧠</div>
-      <strong>Mental Noise</strong>
-      <p>Too many tabs open</p>
+  <div class="container">
+
+    <h2>Your First 10 Minutes</h2>
+    <p>You reset → identify → interrupt → leave with clarity.</p>
+
+  </div>
+
+</div>
+
+<!-- PROGRESSION -->
+<div class="section section-soft">
+
+  <div class="container">
+
+    <h2>Your First 3 Months</h2>
+
+    <div class="grid grid-4">
+
+      <div class="card">
+        <strong>Month 1</strong>
+        <p>Awareness</p>
+      </div>
+
+      <div class="card">
+        <strong>Month 2</strong>
+        <p>Disruption</p>
+      </div>
+
+      <div class="card">
+        <strong>Month 3</strong>
+        <p>Control</p>
+      </div>
+
     </div>
 
-    <div>
-      <div class="icon">⚡</div>
-      <strong>Low Energy</strong>
-      <p>Drained before you start</p>
-    </div>
-
-    <div>
-      <div class="icon">🎯</div>
-      <strong>No Focus</strong>
-      <p>Hard to finish tasks</p>
-    </div>
-
-    <div>
-      <div class="icon">⚖️</div>
-      <strong>Out of Balance</strong>
-      <p>Everything feels off</p>
-    </div>
-
   </div>
-</div>
-
-<!-- SOLUTION -->
-<div class="container hero fade">
-
-  <div>
-    <h2>A System to Reset Your Mind</h2>
-    <p>No overwhelm. No complexity. Just what works.</p>
-  </div>
-
-  <div>
-    <img src="product.jpg">
-  </div>
-
-</div>
-
-<!-- WHAT'S INSIDE -->
-<div class="container fade">
-
-  <h2 style="text-align:center;">What’s Inside</h2>
-
-  <div class="grid">
-
-    <div class="card">Daily Reset Ritual</div>
-    <div class="card">Reset Guide</div>
-    <div class="card">Focus Card</div>
-    <div class="card">Perspective Prompt</div>
-
-  </div>
-
-</div>
-
-<!-- OUTCOME -->
-<div class="dark fade">
-  <div class="container" style="text-align:center;">
-
-    <h2>What Changes</h2>
-    <p>You feel clearer, lighter, more in control.</p>
-
-  </div>
-</div>
-
-<!-- PROCESS -->
-<div class="container process fade">
-
-  <h2>Simple By Design</h2>
-  <p>Receive → Use → Feel the shift</p>
 
 </div>
 
 <!-- CTA -->
-<div class="container cta fade">
+<div class="cta">
 
-  <div>
-    <img src="product.jpg">
-  </div>
+  <h2>Start Your Reset</h2>
+  <div class="price">$39/month</div>
 
-  <div>
-    <h2>Start Your Reset</h2>
-    <div class="price">$39/month</div>
+  <a class="btn" href="https://buy.stripe.com/YOUR-LINK" target="_blank">
+    Begin Now →
+  </a>
 
-    <a href="https://buy.stripe.com/YOUR-LINK" class="btn" target="_blank">
-      Begin Now →
-    </a>
-
-    <p>Cancel anytime • No overwhelm</p>
-  </div>
+  <p class="small">Simple system • No overwhelm • Cancel anytime</p>
 
 </div>
 
