@@ -22,8 +22,8 @@ body {
 .topbar {
   position: fixed;
   width: 100%;
-  background: rgba(255,255,255,0.95);
-  backdrop-filter: blur(8px);
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(10px);
   border-bottom: 1px solid #eee;
   z-index: 1000;
 }
@@ -50,17 +50,14 @@ body {
   font-size: 14px;
 }
 
-/* HEADER CTA */
 .nav-cta {
   background: #111;
   color: #fff;
   padding: 12px 22px;
   text-decoration: none;
   font-size: 13px;
-  letter-spacing: 0.5px;
   border-radius: 2px;
-  display: inline-block;
-  transition: all 0.25s ease;
+  transition: 0.25s;
 }
 
 .nav-cta:hover {
@@ -79,15 +76,14 @@ body {
 .hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  align-items: center;
   gap: 60px;
-  margin-top: 60px;
+  align-items: center;
 }
 
 .hero h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 56px;
-  line-height: 1.1;
+  font-size: 58px;
+  line-height: 1.05;
 }
 
 .hero p {
@@ -99,8 +95,8 @@ body {
   display: inline-block;
   margin-top: 25px;
   padding: 16px 34px;
-  background: white;
-  color: black;
+  background: #fff;
+  color: #000;
   text-decoration: none;
   transition: 0.3s;
 }
@@ -109,13 +105,19 @@ body {
   transform: translateY(-3px);
 }
 
+.micro {
+  margin-top: 12px;
+  font-size: 13px;
+  color: #777;
+}
+
 .hero img {
   width: 100%;
   border-radius: 6px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+  box-shadow: 0 25px 70px rgba(0,0,0,0.7);
 }
 
-/* SECTIONS */
+/* SECTION */
 .section {
   padding: 120px 20px;
   text-align: center;
@@ -127,63 +129,61 @@ body {
 
 h2 {
   font-family: 'Playfair Display', serif;
-  font-size: 38px;
+  font-size: 40px;
 }
 
 /* GRID */
 .grid {
   display: grid;
+  gap: 40px;
   margin-top: 60px;
 }
 
 .grid-4 {
   grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
-  gap: 40px;
 }
 
-/* CARDS */
+/* CARD (UPGRADED) */
 .card {
-  background: linear-gradient(145deg, #111, #0c0c0c);
-  border: 1px solid #1f1f1f;
-  border-radius: 8px;
-  padding: 30px 24px;
+  padding: 30px;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #111, #0b0b0b);
+  border: 1px solid rgba(255,255,255,0.06);
   text-align: left;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
 .card:hover {
   transform: translateY(-6px);
+  border-color: rgba(255,255,255,0.15);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
 }
 
-.card strong {
-  display: block;
+.step {
+  font-size: 12px;
+  color: #666;
   margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.card h3 {
+  margin: 0 0 10px 0;
 }
 
 .card p {
   color: #888;
 }
 
-/* TAG */
-.tag {
-  font-size: 11px;
-  letter-spacing: 2px;
-  color: #555;
-  margin-bottom: 12px;
-  display: block;
-}
-
 /* CTA */
 .cta {
-  text-align: center;
   padding: 140px 20px;
+  text-align: center;
   background: linear-gradient(#0a0a0a, #000);
 }
 
 .price {
-  font-size: 36px;
-  margin: 15px 0;
+  font-size: 38px;
+  margin: 10px 0;
 }
 
 .small {
@@ -215,7 +215,7 @@ h2 {
     </nav>
 
     <a href="https://buy.stripe.com/YOUR-LINK" class="nav-cta" target="_blank">
-      Start Your Reset
+      Begin Reset
     </a>
   </div>
 </header>
@@ -225,14 +225,22 @@ h2 {
 
   <div>
     <h1>Unsubscribe from Chaos.</h1>
+
     <p>Human Buffering Complete. You're Back Online.</p>
-    <p>A 10-minute system to clear your mind and stay focused daily.</p>
+
+    <p>
+      A structured 10-minute reset that stops mental overload and puts you back in control — daily.
+    </p>
 
     <a class="btn" href="https://buy.stripe.com/YOUR-LINK" target="_blank">
-      Start Your Reset →
+      Begin Reset Protocol →
     </a>
 
-    <p class="small">$39/month • Cancel anytime</p>
+    <p class="small">$39/month • 10 minutes a day • Cancel anytime</p>
+
+    <p class="micro">
+      Used to interrupt overthinking, stress loops, and decision fatigue.
+    </p>
   </div>
 
   <div>
@@ -244,8 +252,15 @@ h2 {
 <!-- PROBLEM -->
 <section class="section">
   <h2>You’re not lazy. You’re overloaded.</h2>
+
   <p>Your mind is constantly switching between tasks, decisions, and expectations.</p>
+
   <p><strong>You don’t need more time. You need less mental noise.</strong></p>
+
+  <p style="margin-top:20px; color:#aaa; max-width:600px; margin-left:auto; margin-right:auto;">
+    Most people try to fix this with more discipline. That doesn’t work.
+    This system works by interrupting the pattern — not forcing control.
+  </p>
 </section>
 
 <!-- HOW -->
@@ -255,32 +270,32 @@ h2 {
   <div class="grid grid-4">
 
     <div class="card">
-      <span class="tag">01</span>
-      <strong>Reset</strong>
+      <div class="step">01</div>
+      <h3>Reset</h3>
       <p>Clear mental clutter in minutes.</p>
     </div>
 
     <div class="card">
-      <span class="tag">02</span>
-      <strong>Understand</strong>
+      <div class="step">02</div>
+      <h3>Understand</h3>
       <p>See how your mind reacts under pressure.</p>
     </div>
 
     <div class="card">
-      <span class="tag">03</span>
-      <strong>Interrupt</strong>
+      <div class="step">03</div>
+      <h3>Interrupt</h3>
       <p>Break overthinking and stress cycles.</p>
     </div>
 
     <div class="card">
-      <span class="tag">04</span>
-      <strong>Stabilise</strong>
+      <div class="step">04</div>
+      <h3>Stabilise</h3>
       <p>Operate with focus and control.</p>
     </div>
 
   </div>
 
-  <img src="images/ritual.jpg" style="margin-top:60px; max-width:520px;" alt="Ritual">
+  <img src="images/ritual.jpg" style="margin-top:70px; max-width:520px;" alt="Ritual">
 
 </section>
 
@@ -290,6 +305,12 @@ h2 {
   <p>You reset → identify → interrupt → leave with clarity.</p>
 </section>
 
+<!-- TENSION -->
+<section class="section">
+  <h2>You don’t need a new life.</h2>
+  <p>You need a reset.</p>
+</section>
+
 <!-- CTA -->
 <section class="cta">
 
@@ -297,10 +318,10 @@ h2 {
   <div class="price">$39/month</div>
 
   <a class="btn" href="https://buy.stripe.com/YOUR-LINK" target="_blank">
-    Begin Now →
+    Begin Reset Protocol →
   </a>
 
-  <p class="small">Simple system • No overwhelm • Cancel anytime</p>
+  <p class="small">Simple system • No overwhelm • Cancel anytime. No lock-in.</p>
 
 </section>
 
