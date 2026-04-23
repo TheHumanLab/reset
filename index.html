@@ -49,116 +49,8 @@ body {
   color: #555;
   font-size: 14px;
 }
-  <section class="section">
 
-  <h2>What Changes When You Reset</h2>
-
-  <div class="grid grid-4">
-
-    <div class="card">
-      <span class="tag">01</span>
-      <strong>Mental Clarity</strong>
-      <p>Your thoughts stop competing for attention.</p>
-    </div>
-
-    <div class="card">
-      <span class="tag">02</span>
-      <strong>Reduced Stress</strong>
-      <p>You stop carrying unnecessary pressure.</p>
-    </div>
-
-    <div class="card">
-      <span class="tag">03</span>
-      <strong>Focused Action</strong>
-      <p>You know what matters and act on it.</p>
-    </div>
-
-    <div class="card">
-      <span class="tag">04</span>
-      <strong>Internal Control</strong>
-      <p>You feel steady instead of scattered.</p>
-    </div>
-
-  </div>
-
-</section>
-
-  <section class="section soft">
-
-  <h2>Simple By Design</h2>
-
-  <div class="grid grid-4">
-
-    <div class="card">
-      <strong>1. Receive</strong>
-      <p>Your monthly reset system arrives.</p>
-    </div>
-
-    <div class="card">
-      <strong>2. Use</strong>
-      <p>Apply it in minutes each day.</p>
-    </div>
-
-    <div class="card">
-      <strong>3. Interrupt</strong>
-      <p>Break the patterns causing overload.</p>
-    </div>
-
-    <div class="card">
-      <strong>4. Stabilise</strong>
-      <p>Build clarity and control over time.</p>
-    </div>
-
-  </div>
-
-</section><section class="section">
-
-  <h2>Real People. Real Reset.</h2>
-
-  <div class="grid grid-4">
-
-    <div class="card">
-      <p>"This helped me stop overthinking almost immediately."</p>
-      <span class="tag">— Sarah, 29</span>
-    </div>
-
-    <div class="card">
-      <p>"It’s the only system I’ve actually stuck to."</p>
-      <span class="tag">— Michael, 34</span>
-    </div>
-
-    <div class="card">
-      <p>"Simple, clear, and surprisingly effective."</p>
-      <span class="tag">— James, 41</span>
-    </div>
-
-    <div class="card">
-      <p>"Feels like control came back into my life."</p>
-      <span class="tag">— Aisha, 31</span>
-    </div>
-
-  </div>
-
-</section>
-  <section class="cta">
-
-  <h2>Start Your Reset</h2>
-  <div class="price">$39/month</div>
-
-  <p style="color:#aaa; margin-bottom:20px;">
-    Less than $1.30/day for a clear, controlled mind.
-  </p>
-
-  <a class="btn" href="https://buy.stripe.com/YOUR-LINK" target="_blank">
-    Begin Now →
-  </a>
-
-  <p class="small">
-    Cancel anytime • No long-term commitment • Try risk-free
-  </p>
-
-</section>
-
+/* HEADER CTA */
 .nav-cta {
   background: #111;
   color: #fff;
@@ -167,14 +59,13 @@ body {
   font-size: 13px;
   letter-spacing: 0.5px;
   border-radius: 2px;
-  transition: all 0.25s ease;
   display: inline-block;
+  transition: all 0.25s ease;
 }
 
 .nav-cta:hover {
   background: #000;
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
 }
 
 /* CONTAINER */
@@ -250,49 +141,37 @@ h2 {
   gap: 40px;
 }
 
-/* DIMENSIONAL CARDS */
+/* CARDS */
 .card {
   background: linear-gradient(145deg, #111, #0c0c0c);
   border: 1px solid #1f1f1f;
   border-radius: 8px;
   padding: 30px 24px;
   text-align: left;
-
-  box-shadow:
-    0 10px 30px rgba(0,0,0,0.5),
-    inset 0 1px 0 rgba(255,255,255,0.03);
-
-  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  transition: 0.3s;
 }
 
 .card:hover {
   transform: translateY(-6px);
-  border-color: #2a2a2a;
-  box-shadow:
-    0 20px 50px rgba(0,0,0,0.7),
-    inset 0 1px 0 rgba(255,255,255,0.05);
 }
 
 .card strong {
   display: block;
-  font-size: 16px;
   margin-bottom: 10px;
-  color: #fff;
 }
 
 .card p {
-  font-size: 14px;
   color: #888;
-  margin: 0;
 }
 
-/* TAG (SYSTEM NUMBER) */
+/* TAG */
 .tag {
   font-size: 11px;
   letter-spacing: 2px;
   color: #555;
-  display: block;
   margin-bottom: 12px;
+  display: block;
 }
 
 /* CTA */
@@ -336,7 +215,7 @@ h2 {
     </nav>
 
     <a href="https://buy.stripe.com/YOUR-LINK" class="nav-cta" target="_blank">
-      Start
+      Start Your Reset
     </a>
   </div>
 </header>
@@ -347,7 +226,6 @@ h2 {
   <div>
     <h1>Unsubscribe from Chaos.</h1>
     <p>Human Buffering Complete. You're Back Online.</p>
-
     <p>A 10-minute system to clear your mind and stay focused daily.</p>
 
     <a class="btn" href="https://buy.stripe.com/YOUR-LINK" target="_blank">
@@ -358,7 +236,7 @@ h2 {
   </div>
 
   <div>
-    <img src="images/product.jpg">
+    <img src="images/product.jpg" alt="The Human Stack">
   </div>
 
 </section>
@@ -370,7 +248,7 @@ h2 {
   <p><strong>You don’t need more time. You need less mental noise.</strong></p>
 </section>
 
-<!-- HOW IT WORKS -->
+<!-- HOW -->
 <section class="section soft" id="how">
   <h2>How It Works</h2>
 
@@ -402,7 +280,7 @@ h2 {
 
   </div>
 
-  <img src="images/ritual.jpg" style="margin-top:70px; max-width:520px; box-shadow:0 20px 60px rgba(0,0,0,0.6);">
+  <img src="images/ritual.jpg" style="margin-top:60px; max-width:520px;" alt="Ritual">
 
 </section>
 
