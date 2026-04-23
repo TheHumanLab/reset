@@ -13,7 +13,7 @@
 /* BASE */
 body {
   margin: 0;
-  background: #0d0d0d;
+  background: radial-gradient(circle at top, #141414, #0a0a0a);
   color: #eaeaea;
   font-family: 'Inter', sans-serif;
 }
@@ -21,9 +21,9 @@ body {
 /* TOP BAR */
 .topbar {
   position: fixed;
-  top: 0;
   width: 100%;
-  background: #ffffff;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(8px);
   border-bottom: 1px solid #eee;
   z-index: 1000;
 }
@@ -40,7 +40,6 @@ body {
 .logo {
   font-size: 14px;
   letter-spacing: 1px;
-  font-weight: 500;
   color: #111;
 }
 
@@ -51,54 +50,43 @@ body {
   font-size: 14px;
 }
 
-.nav a:hover {
-  color: #000;
-}
-
 .nav-cta {
   background: #111;
   color: white;
   padding: 10px 16px;
   text-decoration: none;
-  font-size: 14px;
 }
 
-/* LAYOUT */
+/* CONTAINER */
 .container {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: auto;
-  padding: 120px 20px;
-  text-align: center;
+  padding: 140px 20px;
 }
 
+/* HERO */
 .hero {
-  margin-top: 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 60px;
 }
 
-h1, h2 {
+.hero h1 {
   font-family: 'Playfair Display', serif;
-  letter-spacing: -0.5px;
+  font-size: 56px;
+  line-height: 1.1;
 }
 
-h1 {
-  font-size: 52px;
-  margin-bottom: 10px;
-}
-
-h2 {
-  font-size: 34px;
-}
-
-p {
+.hero p {
   color: #aaa;
   font-size: 18px;
 }
 
-/* BUTTON */
 .btn {
   display: inline-block;
   margin-top: 25px;
-  padding: 16px 32px;
+  padding: 16px 34px;
   background: white;
   color: black;
   text-decoration: none;
@@ -106,31 +94,30 @@ p {
 }
 
 .btn:hover {
-  transform: translateY(-2px);
-  opacity: 0.9;
+  transform: translateY(-3px);
 }
 
-/* IMAGE */
-img {
+.hero img {
   width: 100%;
-  max-width: 600px;
-  margin-top: 40px;
+  border-radius: 6px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
 }
 
 /* SECTIONS */
 .section {
   padding: 120px 20px;
+  text-align: center;
 }
 
-.section-soft {
-  background: #141414;
+.soft {
+  background: #111;
 }
 
-.section-dark {
-  background: #0a0a0a;
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 38px;
 }
 
-/* GRID */
 .grid {
   display: grid;
   gap: 30px;
@@ -141,28 +128,34 @@ img {
   grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
 }
 
-/* CARD */
 .card {
-  border-bottom: 1px solid #222;
   padding: 20px 0;
+  border-bottom: 1px solid #222;
 }
 
 /* CTA */
 .cta {
   text-align: center;
-  padding: 120px 20px;
-  background: #0a0a0a;
+  padding: 140px 20px;
+  background: linear-gradient(#0a0a0a, #000);
 }
 
 .price {
-  font-size: 34px;
+  font-size: 36px;
   margin: 15px 0;
 }
 
-/* SMALL TEXT */
 .small {
   color: #777;
   font-size: 14px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
 }
 
 </style>
@@ -170,7 +163,7 @@ img {
 
 <body>
 
-<!-- TOP BAR -->
+<!-- NAV -->
 <header class="topbar">
   <div class="topbar-inner">
     <div class="logo">THE HUMAN STACK™</div>
@@ -180,136 +173,74 @@ img {
       <a href="#inside">Inside</a>
     </nav>
 
-    <a href="https://buy.stripe.com/8x2aEY9Cn78HaFp6M23oA0a" class="nav-cta" target="_blank">
-      Start Your Reset
+    <a href="https://buy.stripe.com/YOUR-LINK" class="nav-cta" target="_blank">
+      Start
     </a>
   </div>
 </header>
 
 <!-- HERO -->
-<div class="container hero">
+<section class="container hero">
 
-  <h1>Unsubscribe from Chaos.</h1>
-  <p>Human Buffering Complete. You're Back Online.</p>
+  <div>
+    <h1>Unsubscribe from Chaos.</h1>
+    <p>Human Buffering Complete. You're Back Online.</p>
 
-  <p>A 10-minute system to reduce stress, clear your mind, and stay focused daily.</p>
+    <p>A 10-minute system to clear your mind and stay focused daily.</p>
 
-  <a class="btn" href="https://buy.stripe.com/8x2aEY9Cn78HaFp6M23oA0a" target="_blank">
-    Start Your Reset →
-  </a>
+    <a class="btn" href="https://buy.stripe.com/YOUR-LINK" target="_blank">
+      Start Your Reset →
+    </a>
 
-  <p class="small">$39/month • Cancel anytime • 10 minutes a day</p>
+    <p class="small">$39/month • Cancel anytime</p>
+  </div>
 
-  <img src="product.jpg" alt="The Human Stack product">
+  <div>
+    <img src="product.jpg">
+  </div>
 
-</div>
+</section>
 
 <!-- PROBLEM -->
-<div class="section section-dark">
+<section class="section">
+  <h2>You’re not lazy. You’re overloaded.</h2>
+  <p>Your mind is constantly switching between tasks, decisions, and expectations.</p>
+  <p><strong>You don’t need more time. You need less mental noise.</strong></p>
+</section>
 
-  <div class="container">
+<!-- HOW -->
+<section class="section soft" id="how">
+  <h2>How It Works</h2>
 
-    <h2>You’re not lazy. You’re overloaded.</h2>
-
-    <p>Your mind is constantly switching between tasks, decisions, and expectations.</p>
-    <p><strong>You don’t need more time. You need less mental noise.</strong></p>
-
+  <div class="grid grid-4">
+    <div class="card"><strong>Reset</strong><p>Clear clutter</p></div>
+    <div class="card"><strong>Understand</strong><p>See patterns</p></div>
+    <div class="card"><strong>Interrupt</strong><p>Break loops</p></div>
+    <div class="card"><strong>Stabilise</strong><p>Stay clear</p></div>
   </div>
 
-</div>
+  <img src="product.jpg" style="margin-top:60px; max-width:500px;">
+</section>
 
-<!-- HOW IT WORKS -->
-<div class="section section-soft" id="how">
-
-  <div class="container">
-
-    <h2>How It Works</h2>
-
-    <div class="grid grid-4">
-
-      <div class="card">
-        <strong>Reset Daily</strong>
-        <p>Clear mental clutter in minutes.</p>
-      </div>
-
-      <div class="card">
-        <strong>Understand Patterns</strong>
-        <p>See how your mind reacts under pressure.</p>
-      </div>
-
-      <div class="card">
-        <strong>Interrupt Loops</strong>
-        <p>Stop overthinking and stress cycles.</p>
-      </div>
-
-      <div class="card">
-        <strong>Stay Clear</strong>
-        <p>Operate with focus and control.</p>
-      </div>
-
-    </div>
-
-    <img src="product.jpg">
-
-  </div>
-
-</div>
-
-<!-- FIRST EXPERIENCE -->
-<div class="section section-dark">
-
-  <div class="container">
-
-    <h2>Your First 10 Minutes</h2>
-    <p>You reset → identify → interrupt → leave with clarity.</p>
-
-  </div>
-
-</div>
-
-<!-- PROGRESSION -->
-<div class="section section-soft">
-
-  <div class="container">
-
-    <h2>Your First 3 Months</h2>
-
-    <div class="grid grid-4">
-
-      <div class="card">
-        <strong>Month 1</strong>
-        <p>Awareness</p>
-      </div>
-
-      <div class="card">
-        <strong>Month 2</strong>
-        <p>Disruption</p>
-      </div>
-
-      <div class="card">
-        <strong>Month 3</strong>
-        <p>Control</p>
-      </div>
-
-    </div>
-
-  </div>
-
-</div>
+<!-- EXPERIENCE -->
+<section class="section">
+  <h2>Your First 10 Minutes</h2>
+  <p>You reset → identify → interrupt → leave with clarity.</p>
+</section>
 
 <!-- CTA -->
-<div class="cta">
+<section class="cta">
 
   <h2>Start Your Reset</h2>
   <div class="price">$39/month</div>
 
-  <a class="btn" href="https://buy.stripe.com/8x2aEY9Cn78HaFp6M23oA0a" target="_blank">
+  <a class="btn" href="https://buy.stripe.com/YOUR-LINK" target="_blank">
     Begin Now →
   </a>
 
   <p class="small">Simple system • No overwhelm • Cancel anytime</p>
 
-</div>
+</section>
 
 </body>
 </html>
