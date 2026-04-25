@@ -6,25 +6,34 @@
 
 <title>The Human Stack™</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
+
+/* VARIABLES */
+:root {
+  --black: #111;
+  --cream: #f5f3ef;
+  --olive: #6b705c;
+}
 
 /* BASE */
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background: #0a0a0a;
-  color: #eaeaea;
+  background: var(--cream);
+  color: var(--black);
 }
 
 /* TYPO */
 h1, h2, h3 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 1px;
+  margin: 0;
 }
 
 p {
-  color: #9a9a9a;
+  color: #555;
   line-height: 1.6;
 }
 
@@ -33,7 +42,6 @@ p {
   position: fixed;
   width: 100%;
   background: rgba(245,243,239,0.95);
-  backdrop-filter: blur(6px);
   border-bottom: 1px solid #e5e5e5;
   z-index: 1000;
 }
@@ -50,18 +58,10 @@ p {
 .logo {
   font-size: 12px;
   letter-spacing: 2px;
-  color: #111;
-}
-
-.nav a {
-  margin: 0 15px;
-  text-decoration: none;
-  color: #555;
-  font-size: 13px;
 }
 
 .nav-cta {
-  background: #111;
+  background: var(--black);
   color: white;
   padding: 10px 18px;
   text-decoration: none;
@@ -70,33 +70,46 @@ p {
 
 /* HERO */
 .hero {
-  background: #f5f3ef;
-  padding: 180px 20px 140px;
+  padding: 180px 20px 120px;
   text-align: center;
 }
 
 .hero h1 {
-  font-size: 60px;
-  color: #111;
+  font-size: 72px;
 }
 
 .hero p {
-  max-width: 620px;
-  margin: 25px auto;
-  color: #555;
+  margin-top: 20px;
+  font-size: 16px;
 }
 
-.btn-dark {
-  margin-top: 25px;
+.hero-actions {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: var(--olive);
+  color: white;
   padding: 16px 34px;
-  background: #111;
-  color: #fff;
   text-decoration: none;
+  font-size: 13px;
+}
+
+.btn-secondary {
+  border: 1px solid var(--black);
+  padding: 16px 34px;
+  text-decoration: none;
+  color: var(--black);
+  font-size: 13px;
 }
 
 /* SECTION */
 .section {
-  padding: 140px 20px;
+  padding: 120px 20px;
 }
 
 .container {
@@ -104,7 +117,13 @@ p {
   margin: auto;
 }
 
-/* GRID 3 + 3 */
+/* TITLE */
+.section-title {
+  text-align: center;
+  font-size: 42px;
+}
+
+/* GRID */
 .stack-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -126,131 +145,66 @@ p {
 
 /* ITEM */
 .stack-item {
-  border: 1px solid rgba(255,255,255,0.08);
-  overflow: hidden;
-  transition: all 0.35s ease;
-  opacity: 0;
-  transform: translateY(40px);
-}
-
-.stack-item.show {
-  opacity: 1;
-  transform: translateY(0);
+  border: 1px solid #ddd;
+  background: white;
+  transition: all 0.3s ease;
 }
 
 .stack-item:hover {
-  border-color: rgba(255,255,255,0.25);
   transform: translateY(-4px);
+  border-color: #aaa;
 }
 
-/* EXECUTION EMPHASIS */
+/* EXECUTE EMPHASIS */
 .stack-item:nth-child(5) {
-  border: 1px solid rgba(255,255,255,0.3);
+  border: 2px solid var(--olive);
 }
 
 /* IMAGE */
 .product-img {
   width: 100%;
-  height: 240px;
+  height: 220px;
   object-fit: cover;
-  display: block;
-  filter: grayscale(100%) contrast(1.05);
-  transition: all 0.4s ease;
-}
-
-.stack-item:hover .product-img {
-  filter: grayscale(0%) contrast(1.2);
-  transform: scale(1.03);
 }
 
 /* CONTENT */
-.stack-item h3,
-.stack-item p,
-.stack-item .buy-btn {
-  padding-left: 24px;
-  padding-right: 24px;
-}
-
 .stack-item h3 {
-  margin-top: 20px;
-  letter-spacing: 1px;
+  padding: 20px 20px 0;
+  font-size: 26px;
 }
 
-.stack-item .buy-btn {
-  margin-bottom: 24px;
+.stack-item p {
+  padding: 0 20px;
 }
 
-/* BUTTON */
 .buy-btn {
-  margin-top: 18px;
+  margin: 20px;
   display: inline-block;
   padding: 12px 20px;
-  border: 1px solid #fff;
+  border: 1px solid var(--black);
   text-decoration: none;
-  color: #fff;
+  color: var(--black);
   font-size: 12px;
-  letter-spacing: 1px;
   transition: all 0.25s ease;
 }
 
 .buy-btn:hover {
-  background: #fff;
-  color: #000;
+  background: var(--black);
+  color: white;
 }
 
-/* SYSTEM — FIXED + DEPTH */
-.list .item {
-  display: grid;
-  grid-template-columns: 70px 1fr;
-  padding: 40px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-
-.list .item:last-child {
-  border-bottom: none;
-}
-
-.meta {
-  font-size: 11px;
-  letter-spacing: 2px;
-  color: #555;
-  padding-top: 6px;
-}
-
-.content p:first-of-type {
-  color: #eaeaea;
-}
-
-.content p:last-of-type {
-  font-size: 14px;
-  opacity: 0.6;
-}
-
-/* TESTIMONIALS */
-.testimonials {
-  background: #111;
-}
-
-.testimonial {
-  border-left: 2px solid #333;
-  padding-left: 20px;
-  margin-bottom: 30px;
-}
-
-/* CTA */
+/* FINAL CTA */
 .cta {
   text-align: center;
-  padding-top: 80px;
-  padding-bottom: 120px;
+  padding: 100px 20px;
 }
 
-.cta-elite {
+.cta a {
+  background: var(--olive);
+  color: white;
   padding: 18px 60px;
-  background: #e8e6e3;
-  color: #000;
   text-decoration: none;
-  letter-spacing: 2px;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 </style>
@@ -261,167 +215,78 @@ p {
 <header class="topbar">
   <div class="topbar-inner">
     <div class="logo">THE HUMAN STACK™</div>
-    <nav class="nav">
-      <a href="#system">System</a>
-    </nav>
-    <a href="#stack" class="nav-cta">Enter Stack</a>
+    <a href="https://buy.stripe.com/YOUR-LINK" class="nav-cta">EXECUTE</a>
   </div>
 </header>
 
+<!-- HERO -->
 <section class="hero">
-  <h1>You don’t need motivation.<br>You need control.</h1>
-  <p>
-    Most people try to fix everything at once.  
-    This system isolates the exact failure point—and corrects it.
-  </p>
-  <a class="btn-dark" href="#stack">Find Your Starting Point</a>
+  <h1>CONTROL IS A CHOICE.</h1>
+  <p>Six tools. Six states. Any one, any time.</p>
+
+  <div class="hero-actions">
+    <a class="btn-primary" href="https://buy.stripe.com/YOUR-LINK">EXECUTE NOW</a>
+    <a class="btn-secondary" href="#stack">FIND YOUR TOOL</a>
+  </div>
 </section>
 
+<!-- STACK -->
 <section class="section" id="stack">
   <div class="container">
-    <h2>Where are you stuck?</h2>
+    <h2 class="section-title">WHAT’S HAPPENING RIGHT NOW?</h2>
 
     <div class="stack-grid">
 
       <div class="stack-item">
-        <img src="images/reset.jpg" class="product-img">
-        <h3>RESET</h3>
-        <p>I keep drifting without noticing</p>
-        <a href="#" class="buy-btn">$29 • Start</a>
+        <img src="images/interrupt.jpg" class="product-img">
+        <h3>INTERRUPT</h3>
+        <p>I can’t stop this pattern</p>
+        <a href="#" class="buy-btn">$29 • START</a>
       </div>
 
       <div class="stack-item">
-        <img src="images/regulate.jpg" class="product-img">
-        <h3>REGULATE</h3>
-        <p>I feel overwhelmed or mentally noisy</p>
-        <a href="#" class="buy-btn">$29 • Start</a>
+        <img src="images/stabilise.jpg" class="product-img">
+        <h3>STABILISE</h3>
+        <p>I feel overwhelmed</p>
+        <a href="#" class="buy-btn">$29 • START</a>
       </div>
 
       <div class="stack-item">
-        <img src="images/decision.jpg" class="product-img">
-        <h3>DECISION</h3>
-        <p>I’m avoiding something I already know</p>
-        <a href="#" class="buy-btn">$39 • Start</a>
+        <img src="images/decide.jpg" class="product-img">
+        <h3>DECIDE</h3>
+        <p>I’m avoiding something</p>
+        <a href="#" class="buy-btn">$39 • START</a>
       </div>
 
       <div class="stack-item">
-        <img src="images/direction.jpg" class="product-img">
-        <h3>DIRECTION</h3>
-        <p>I don’t know what actually matters</p>
-        <a href="#" class="buy-btn">$39 • Start</a>
+        <img src="images/focus.jpg" class="product-img">
+        <h3>FOCUS</h3>
+        <p>I can’t concentrate</p>
+        <a href="#" class="buy-btn">$39 • START</a>
       </div>
 
       <div class="stack-item">
-        <img src="images/execution.jpg" class="product-img">
-        <h3>EXECUTION</h3>
-        <p>I need to get something done</p>
-        <a href="https://buy.stripe.com/YOUR-LINK" class="buy-btn">$49 • Start</a>
+        <img src="images/execute.jpg" class="product-img">
+        <h3>EXECUTE</h3>
+        <p>I need to act now</p>
+        <a href="https://buy.stripe.com/YOUR-LINK" class="buy-btn">$49 • START</a>
       </div>
 
       <div class="stack-item">
-        <img src="images/rebuild.jpg" class="product-img">
-        <h3>REBUILD</h3>
-        <p>I feel burnt out or inconsistent</p>
-        <a href="#" class="buy-btn">$59 • Start</a>
+        <img src="images/reclaim.jpg" class="product-img">
+        <h3>RECLAIM</h3>
+        <p>I’ve lost control</p>
+        <a href="#" class="buy-btn">$59 • START</a>
       </div>
 
     </div>
   </div>
 </section>
 
-<section class="section" id="system">
-  <div class="container">
-    <h2>The System</h2>
-
-    <p style="max-width:600px; margin-top:15px;">
-      Most people try to fix everything at once.  
-      This system isolates the exact failure point—and corrects it.
-    </p>
-
-    <div class="list" style="margin-top:60px;">
-
-      <div class="item">
-        <div class="meta">01</div>
-        <div class="content">
-          <h3>Interrupt</h3>
-          <p>You drift without noticing.</p>
-          <p>The system forces awareness in real time.</p>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="meta">02</div>
-        <div class="content">
-          <h3>Stabilise</h3>
-          <p>Your internal state overrides control.</p>
-          <p>You act from noise, not clarity.</p>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="meta">03</div>
-        <div class="content">
-          <h3>Decide</h3>
-          <p>You already know—but delay replaces action.</p>
-          <p>The system removes options and forces choice.</p>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="meta">04</div>
-        <div class="content">
-          <h3>Direct</h3>
-          <p>You try to do everything—and progress stalls.</p>
-          <p>Only one direction matters.</p>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="meta">05</div>
-        <div class="content">
-          <h3>Execute</h3>
-          <p>You don’t start, or stop halfway.</p>
-          <p>The system removes hesitation.</p>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="meta">06</div>
-        <div class="content">
-          <h3>Rebuild</h3>
-          <p>You’ve lost consistency and capacity.</p>
-          <p>This restores it gradually.</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
+<!-- FINAL CTA -->
+<section class="cta">
+  <a href="https://buy.stripe.com/YOUR-LINK">EXECUTE NOW</a>
 </section>
-
-<section class="section testimonials">
-  <div class="container">
-    <h2>What People Notice</h2>
-    <div class="testimonial"><p>“I start faster now.”</p></div>
-    <div class="testimonial"><p>“It forces action.”</p></div>
-  </div>
-</section>
-
-<section class="section cta">
-  <a class="cta-elite" href="/execution.html">ENTER THE STACK</a>
-</section>
-
-<script>
-const items = document.querySelectorAll('.stack-item');
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.classList.add('show');
-    }
-  });
-}, { threshold: 0.2 });
-
-items.forEach(item => observer.observe(item));
-</script>
 
 </body>
 </html>
