@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>EXECUTE — The Human Stack™</title>
+<title>The Human Stack™</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
@@ -26,9 +26,10 @@ body {
 }
 
 /* TYPO */
-h1, h2 {
+h1, h2, h3 {
   font-family: 'Bebas Neue', sans-serif;
   letter-spacing: 1px;
+  margin: 0;
 }
 
 p {
@@ -36,9 +37,40 @@ p {
   line-height: 1.6;
 }
 
+/* NAV */
+.topbar {
+  position: fixed;
+  width: 100%;
+  background: rgba(245,243,239,0.95);
+  border-bottom: 1px solid #e5e5e5;
+  z-index: 1000;
+}
+
+.topbar-inner {
+  max-width: 1100px;
+  margin: auto;
+  padding: 18px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.nav-cta {
+  background: var(--black);
+  color: white;
+  padding: 10px 18px;
+  text-decoration: none;
+  font-size: 12px;
+}
+
 /* HERO */
 .hero {
-  padding: 140px 20px 80px;
+  padding: 180px 20px 120px;
   text-align: center;
 }
 
@@ -51,127 +83,121 @@ p {
   font-size: 16px;
 }
 
-/* BUTTON */
-.cta {
+.hero-actions {
   margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
-.btn {
+.btn-primary {
   background: var(--olive);
   color: white;
-  padding: 18px 40px;
+  padding: 16px 34px;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 13px;
 }
 
-/* IMAGE */
-.product {
-  max-width: 700px;
-  margin: 60px auto;
-}
-
-.product img {
-  width: 100%;
+.btn-secondary {
+  border: 1px solid var(--black);
+  padding: 16px 34px;
+  text-decoration: none;
+  color: var(--black);
+  font-size: 13px;
 }
 
 /* SECTION */
 .section {
-  max-width: 800px;
+  padding: 120px 20px;
+}
+
+.container {
+  max-width: 1100px;
   margin: auto;
-  padding: 80px 20px;
 }
 
-/* BLOCK */
-.block {
-  margin-bottom: 60px;
-}
-
-.block h2 {
+/* TITLE */
+.section-title {
+  text-align: center;
   font-size: 42px;
-  margin-bottom: 10px;
 }
 
-/* LIST */
-ul {
-  padding-left: 18px;
+/* GRID */
+.stack-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 60px;
 }
 
-li {
-  margin-bottom: 10px;
+@media (max-width: 900px) {
+  .stack-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-/* FINAL CTA */
-.final {
+@media (max-width: 500px) {
+  .stack-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ITEM */
+.stack-item {
+  border: 1px solid #ddd;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.stack-item:hover {
+  transform: translateY(-4px);
+  border-color: #aaa;
+}
+
+/* EXECUTE EMPHASIS */
+.stack-item:nth-child(5) {
+  border: 2px solid var(--olive);
+}
+
+/* IMAGE */
+.product-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+/* CONTENT */
+.stack-item h3 {
+  padding: 20px 20px 0;
+  font-size: 26px;
+}
+
+.stack-item p {
+  padding: 0 20px;
+}
+
+.buy-btn {
+  margin: 20px;
+  display: inline-block;
+  padding: 12px 20px;
+  border: 1px solid var(--black);
+  text-decoration: none;
+  color: var(--black);
+  font-size: 12px;
+  transition: all 0.25s ease;
+}
+
+.buy-btn:hover {
+  background: var(--black);
+  color: white;
+}
+
+/* CTA */
+.cta {
   text-align: center;
   padding: 100px 20px;
 }
-
-.final h2 {
-  font-size: 56px;
-}
-
-</style>
-</head>
-
-<body>
-
-<!-- HERO -->
-<section class="hero">
-  <h1>EXECUTE</h1>
-  <p>You need to start. You’re not starting.</p>
-
-  <div class="cta">
-    <a href="https://buy.stripe.com/YOUR-LINK" class="btn">START NOW — $49</a>
-  </div>
-</section>
-
-<!-- PRODUCT IMAGE -->
-<div class="product">
-  <img src="images/execute.jpg">
-</div>
-
-<!-- PROBLEM -->
-<section class="section">
-  <div class="block">
-    <h2>THIS IS THE FAILURE POINT</h2>
-    <p>
-      You know what needs to be done.  
-      You delay. You avoid. You wait for the right moment.  
-      It never comes.
-    </p>
-  </div>
-
-  <div class="block">
-    <h2>WHAT THIS DOES</h2>
-    <p>
-      This removes hesitation and forces action.
-    </p>
-    <ul>
-      <li>One task only</li>
-      <li>No distraction allowed</li>
-      <li>20-minute execution block</li>
-      <li>Restart if broken</li>
-    </ul>
-  </div>
-
-  <div class="block">
-    <h2>WHAT HAPPENS</h2>
-    <p>
-      You begin within seconds.  
-      You complete something today.  
-      Momentum returns.
-    </p>
-  </div>
-</section>
-
-<!-- FINAL CTA -->
-<section class="final">
-  <h2>EXECUTE NOW</h2>
-  <a href="https://buy.stripe.com/YOUR-LINK" class="btn">START — $49</a>
-</section>
-
-</body>
-</html>
 
 .cta a {
   background: var(--olive);
@@ -186,10 +212,11 @@ li {
 
 <body>
 
+<!-- NAV -->
 <header class="topbar">
   <div class="topbar-inner">
     <div class="logo">THE HUMAN STACK™</div>
-    <a href="https://buy.stripe.com/YOUR-LINK" class="nav-cta">EXECUTE</a>
+    <a href="execution.html" class="nav-cta">EXECUTE</a>
   </div>
 </header>
 
@@ -199,7 +226,7 @@ li {
   <p>Six tools. Six states. Any one, any time.</p>
 
   <div class="hero-actions">
-    <a class="btn-primary" href="https://buy.stripe.com/YOUR-LINK">EXECUTE NOW</a>
+    <a class="btn-primary" href="execution.html">EXECUTE NOW</a>
     <a class="btn-secondary" href="#stack">FIND YOUR TOOL</a>
   </div>
 </section>
@@ -243,7 +270,7 @@ li {
         <img src="images/execute.jpg" class="product-img">
         <h3>EXECUTE</h3>
         <p>I need to act now</p>
-        <a href="https://buy.stripe.com/YOUR-LINK" class="buy-btn">$49 • START</a>
+        <a href="execution.html" class="buy-btn">$49 • START</a>
       </div>
 
       <div class="stack-item">
@@ -259,7 +286,7 @@ li {
 
 <!-- FINAL CTA -->
 <section class="cta">
-  <a href="https://buy.stripe.com/YOUR-LINK">EXECUTE NOW</a>
+  <a href="execution.html">EXECUTE NOW</a>
 </section>
 
 </body>
