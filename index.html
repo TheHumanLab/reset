@@ -328,14 +328,34 @@ p {
 
     <div class="list" style="margin-top:60px;">
 
-      <div class="item">
-        <div class="meta">01</div>
-        <div class="content">
-          <h3>Interrupt</h3>
-          <p>You drift without noticing. Behaviour runs automatically.</p>
-          <p style="opacity:0.6;">The system forces awareness in real time.</p>
-        </div>
-      </div>
+     /* SYSTEM — UPGRADED DEPTH */
+.list .item {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  padding: 40px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.list .item:last-child {
+  border-bottom: none;
+}
+
+.meta {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #555;
+  padding-top: 6px;
+}
+
+/* TEXT DEPTH */
+.content p:first-of-type {
+  color: #eaeaea;
+}
+
+.content p:last-of-type {
+  font-size: 14px;
+  opacity: 0.6;
+}
 
       <div class="item">
         <div class="meta">02</div>
