@@ -39,11 +39,11 @@ h1, h2, h3 {
 p {
   color: #555;
   margin-top: 10px;
+  line-height: 1.6;
 }
 
-/* MICRO */
 .micro {
-  margin-top: 16px;
+  margin-top: 14px;
   font-size: 12px;
   color: #777;
   letter-spacing: 0.5px;
@@ -64,6 +64,7 @@ p {
   padding: 18px 20px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
@@ -81,7 +82,7 @@ p {
 
 /* HERO */
 .hero {
-  padding: 140px 20px 120px;
+  padding: 140px 20px 110px;
   text-align: center;
 }
 
@@ -116,7 +117,7 @@ p {
   color: var(--black);
 }
 
-/* MOBILE BUTTON FIX */
+/* MOBILE FIX */
 @media (max-width: 600px) {
   .hero-actions {
     flex-direction: column;
@@ -132,7 +133,7 @@ p {
 
 /* SECTION */
 .section {
-  padding: 120px 20px;
+  padding: 110px 20px;
 }
 
 .container {
@@ -141,12 +142,12 @@ p {
 }
 
 .section-title {
-  font-size: 42px;
+  font-size: 44px;
 }
 
 .section-sub {
+  margin-top: 10px;
   color: #666;
-  margin-bottom: 30px;
 }
 
 /* GRID */
@@ -181,7 +182,7 @@ p {
   transform: translateY(-4px);
 }
 
-/* EXECUTE highlight */
+/* Highlight EXECUTE */
 .stack-item:nth-child(5) {
   border: 2px solid var(--olive);
 }
@@ -195,16 +196,15 @@ p {
   padding: 20px;
 }
 
-/* TEXT */
+/* CONTENT */
 .stack-item h3 {
-  padding: 20px;
+  padding: 20px 20px 0;
 }
 
 .stack-item p {
   padding: 0 20px;
 }
 
-/* BUTTON */
 .buy-btn {
   display: inline-block;
   margin: 20px;
@@ -222,7 +222,7 @@ p {
 
 /* TESTIMONIALS */
 .testimonials {
-  padding: 100px 20px;
+  padding: 110px 20px;
 }
 
 .testimonial-grid {
@@ -237,7 +237,7 @@ p {
   padding: 30px;
   border-radius: 6px;
   border: 1px solid #ddd;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.05);
   transition: 0.3s;
 }
 
@@ -247,7 +247,6 @@ p {
 
 .quote {
   font-size: 14px;
-  line-height: 1.7;
 }
 
 .author {
@@ -256,7 +255,6 @@ p {
   color: #777;
 }
 
-/* MOBILE TESTIMONIALS */
 @media (max-width: 900px) {
   .testimonial-grid {
     grid-template-columns: 1fr;
@@ -313,7 +311,45 @@ p {
         <p class="micro">Start immediately. No thinking.</p>
       </div>
 
-      <!-- Repeat same structure for others (already correct) -->
+      <div class="stack-item">
+        <img src="images/stabilise.jpg" class="product-img">
+        <h3>STABILISE</h3>
+        <p>Regain control in minutes</p>
+        <a href="#" class="buy-btn">$39 • START</a>
+        <p class="micro">Slow it down. Regain control.</p>
+      </div>
+
+      <div class="stack-item">
+        <img src="images/decide.jpg" class="product-img">
+        <h3>DECIDE</h3>
+        <p>You’re avoiding something you already know</p>
+        <a href="#" class="buy-btn">$49 • START</a>
+        <p class="micro">Choose. Move forward.</p>
+      </div>
+
+      <div class="stack-item">
+        <img src="images/focus.jpg" class="product-img">
+        <h3>FOCUS</h3>
+        <p>Lock onto one task. Finish it.</p>
+        <a href="#" class="buy-btn">$49 • START</a>
+        <p class="micro">One task. No drift.</p>
+      </div>
+
+      <div class="stack-item">
+        <img src="images/execute.jpg" class="product-img">
+        <h3>EXECUTE</h3>
+        <p>Start immediately. No delay.</p>
+        <a href="execution.html" class="buy-btn">$59 • START</a>
+        <p class="micro">Start now. No delay.</p>
+      </div>
+
+      <div class="stack-item">
+        <img src="images/reclaim.jpg" class="product-img">
+        <h3>RECLAIM</h3>
+        <p>Take it back. Fully.</p>
+        <a href="#" class="buy-btn">$69 • START</a>
+        <p class="micro">Take it back. Fully.</p>
+      </div>
 
     </div>
   </div>
