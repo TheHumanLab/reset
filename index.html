@@ -315,7 +315,13 @@ p {
   transform: translateY(-4px);
   box-shadow: 0 10px 25px rgba(0,0,0,0.05);
 }
-
+.stack-item {
+  opacity: 0.85;
+  transition: all 0.2s ease;
+}
+.stack-item:hover {
+  opacity: 1;
+}
 /* Highlight EXECUTE */
 .stack-item:nth-child(5) {
   border: 2px solid var(--olive);
