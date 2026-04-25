@@ -7,40 +7,6 @@
 <title>The Human Stack™</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-.system-explain {
-  background: #ffffff;
-  padding: 80px 20px;
-}
-
-.system-explain h2 {
-  text-align: center;
-  font-size: 28px;
-  margin-bottom: 50px;
-}
-
-.explain-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.explain-item {
-  text-align: center;
-}
-
-.explain-item h4 {
-  margin-bottom: 10px;
-  font-size: 16px;
-  letter-spacing: 1px;
-}
-
-.explain-item p {
-  font-size: 14px;
-  color: #555;
-  line-height: 1.6;
-}
 
 /* MOBILE FIX */
 @media (max-width: 768px) {
@@ -314,7 +280,46 @@ p {
   padding: 18px 60px;
   text-decoration: none;
 }
+.system-explain {
+  background: #ffffff;
+  padding: 80px 20px;
+}
 
+.system-explain h2 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 50px;
+}
+
+.explain-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.explain-item {
+  text-align: center;
+}
+
+.explain-item h4 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+.explain-item p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .explain-grid {
+    grid-template-columns: 1fr;
+  }
+  
 </style>
 </head>
 
