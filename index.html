@@ -18,7 +18,7 @@ body {
   color: #eaeaea;
 }
 
-/* TYPOGRAPHY */
+/* TYPO */
 h1, h2, h3 {
   font-family: 'Playfair Display', serif;
   margin: 0;
@@ -76,10 +76,7 @@ p {
 .hero-inner {
   max-width: 1200px;
   margin: auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
+  text-align: center;
 }
 
 .hero h1 {
@@ -90,6 +87,8 @@ p {
 
 .hero p {
   color: #555;
+  max-width: 600px;
+  margin: 20px auto;
 }
 
 .btn-dark {
@@ -99,16 +98,38 @@ p {
   background: #111;
   color: #fff;
   text-decoration: none;
-  letter-spacing: 0.5px;
 }
 
-.hero img {
-  width: 100%;
+/* GRID ENTRY */
+.stack-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 20px;
+  margin-top: 60px;
 }
 
-/* SECTIONS */
+.stack-item {
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 30px;
+  transition: 0.2s;
+}
+
+.stack-item:hover {
+  background: rgba(255,255,255,0.02);
+}
+
+.stack-item h3 {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.stack-item p {
+  font-size: 14px;
+}
+
+/* SECTION */
 .section {
-  padding: 140px 20px;
+  padding: 120px 20px;
 }
 
 .container {
@@ -116,30 +137,7 @@ p {
   margin: auto;
 }
 
-.container-narrow {
-  max-width: 850px;
-  margin: auto;
-}
-
-/* PROBLEM */
-.problem {
-  background: #f5f3ef;
-  color: #111;
-}
-
-.problem-grid {
-  display: grid;
-  grid-template-columns: repeat(4,1fr);
-  gap: 40px;
-  margin-top: 50px;
-}
-
-.problem-grid div {
-  font-size: 14px;
-  color: #666;
-}
-
-/* LIST SYSTEM (ELITE) */
+/* SYSTEM */
 .list .item {
   display: grid;
   grid-template-columns: 80px 1fr;
@@ -154,41 +152,7 @@ p {
 }
 
 .content h3 {
-  font-size: 26px;
-  margin-bottom: 8px;
-}
-
-/* INSIDE */
-.grid {
-  display: grid;
-  gap: 30px;
-  margin-top: 60px;
-}
-
-.grid-4 {
-  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
-}
-
-.card img {
-  width: 100%;
-  margin-bottom: 15px;
-}
-
-/* OUTCOME STRIP */
-.outcomes {
-  text-align: center;
-}
-
-.outcomes-grid {
-  display: grid;
-  grid-template-columns: repeat(4,1fr);
-  gap: 40px;
-  margin-top: 40px;
-}
-
-.outcomes-grid div {
-  font-size: 14px;
-  color: #bbb;
+  font-size: 24px;
 }
 
 /* CTA */
@@ -206,20 +170,10 @@ p {
   font-size: 12px;
 }
 
-.micro {
-  margin-top: 20px;
-  font-size: 11px;
-  letter-spacing: 2px;
-  color: #777;
-}
-
 /* MOBILE */
 @media (max-width: 768px) {
-  .hero-inner {
-    grid-template-columns: 1fr;
-  }
-  .problem-grid, .outcomes-grid {
-    grid-template-columns: 1fr 1fr;
+  .hero h1 {
+    font-size: 38px;
   }
 }
 
@@ -234,12 +188,11 @@ p {
     <div class="logo">THE HUMAN STACK™</div>
 
     <nav class="nav">
-      <a href="#how">How It Works</a>
-      <a href="#inside">Inside</a>
+      <a href="#system">System</a>
     </nav>
 
-    <a href="https://buy.stripe.com/8x2aEY9Cn78HaFp6M23oA0a" class="nav-cta" target="_blank">
-      Start Your Reset
+    <a href="#stack" class="nav-cta">
+      Enter Stack
     </a>
   </div>
 </header>
@@ -248,49 +201,68 @@ p {
 <section class="hero">
   <div class="hero-inner">
 
-    <div>
-      <h1>Unsubscribe from Chaos.</h1>
-      <p>Human buffering complete. You're back online.</p>
-      <p>A 10-minute system to reduce mental noise and regain control daily.</p>
+    <h1>You don’t need motivation.<br>You need control.</h1>
 
-      <a class="btn-dark" href="https://buy.stripe.com/YOUR-LINK">
-        Start Your Reset
-      </a>
+    <p>
+      6 systems. 6 problems.  
+      Interrupt, stabilise, decide, direct, execute, rebuild.
+    </p>
 
-      <p style="font-size:13px; margin-top:15px; color:#777;">
-        $39/month • Cancel anytime
-      </p>
-    </div>
-
-    <div>
-      <img src="images/product.jpg">
-    </div>
+    <a class="btn-dark" href="#stack">
+      Find Your Starting Point
+    </a>
 
   </div>
 </section>
 
-<!-- PROBLEM -->
-<section class="section problem">
+<!-- STACK ENTRY -->
+<section class="section" id="stack">
   <div class="container">
 
-    <h2>You’re not lazy. You’re overloaded.</h2>
-    <p>Your mind is switching constantly — tasks, decisions, expectations.</p>
+    <h2>Where are you stuck?</h2>
 
-    <div class="problem-grid">
-      <div><strong>Mental Noise</strong><br>Too many active loops.</div>
-      <div><strong>Low Energy</strong><br>Drained before starting.</div>
-      <div><strong>No Focus</strong><br>Attention fragmentation.</div>
-      <div><strong>Out of Balance</strong><br>Nothing stabilises.</div>
+    <div class="stack-grid">
+
+      <div class="stack-item">
+        <h3>RESET</h3>
+        <p>I keep drifting</p>
+      </div>
+
+      <div class="stack-item">
+        <h3>REGULATE</h3>
+        <p>I feel overwhelmed</p>
+      </div>
+
+      <div class="stack-item">
+        <h3>DECISION</h3>
+        <p>I’m avoiding something</p>
+      </div>
+
+      <div class="stack-item">
+        <h3>DIRECTION</h3>
+        <p>I don’t know what to focus on</p>
+      </div>
+
+      <div class="stack-item">
+        <h3>EXECUTION</h3>
+        <p>I need to get something done</p>
+      </div>
+
+      <div class="stack-item">
+        <h3>REBUILD</h3>
+        <p>I feel burnt out</p>
+      </div>
+
     </div>
 
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
-<section class="section" id="how">
-  <div class="container-narrow">
+<!-- SYSTEM -->
+<section class="section" id="system">
+  <div class="container">
 
-    <h2 style="font-size:48px; margin-bottom:60px;">How It Works</h2>
+    <h2>The System</h2>
 
     <div class="list">
 
@@ -298,31 +270,47 @@ p {
         <div class="meta">01</div>
         <div class="content">
           <h3>Reset</h3>
-          <p>Interrupt mental overload immediately.</p>
+          <p>Interrupt autopilot.</p>
         </div>
       </div>
 
       <div class="item">
         <div class="meta">02</div>
         <div class="content">
-          <h3>Understand</h3>
-          <p>See your cognitive patterns clearly.</p>
+          <h3>Regulate</h3>
+          <p>Stabilise internal state.</p>
         </div>
       </div>
 
       <div class="item">
         <div class="meta">03</div>
         <div class="content">
-          <h3>Interrupt</h3>
-          <p>Break loops that drain your energy.</p>
+          <h3>Decision</h3>
+          <p>End delay. Choose.</p>
         </div>
       </div>
 
       <div class="item">
         <div class="meta">04</div>
         <div class="content">
-          <h3>Stabilise</h3>
-          <p>Operate with clarity and control.</p>
+          <h3>Direction</h3>
+          <p>Define priorities.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="meta">05</div>
+        <div class="content">
+          <h3>Execution</h3>
+          <p>Get it done.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="meta">06</div>
+        <div class="content">
+          <h3>Rebuild</h3>
+          <p>Restore capacity.</p>
         </div>
       </div>
 
@@ -331,68 +319,23 @@ p {
   </div>
 </section>
 
-<!-- INSIDE -->
-<section class="section" id="inside">
+<!-- TESTIMONIALS (KEPT) -->
+<section class="section">
   <div class="container">
-
-    <h2>What’s Inside</h2>
-
-    <div class="grid grid-4">
-
-      <div class="card">
-        <img src="images/ritual.jpg">
-        <strong>Reset Ritual</strong>
-        <p>Clear your state in minutes.</p>
-      </div>
-
-      <div class="card">
-        <img src="images/product.jpg">
-        <strong>Framework</strong>
-        <p>Understand your internal system.</p>
-      </div>
-
-      <div class="card">
-        <img src="images/product.jpg">
-        <strong>Focus Tool</strong>
-        <p>Stay grounded throughout the day.</p>
-      </div>
-
-      <div class="card">
-        <img src="images/product.jpg">
-        <strong>Interrupt Card</strong>
-        <p>Break patterns instantly.</p>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-<!-- OUTCOMES -->
-<section class="section outcomes">
-  <div class="container">
-
-    <h2>What Changes</h2>
-
-    <div class="outcomes-grid">
-      <div>Clarity within minutes</div>
-      <div>Reduced mental load</div>
-      <div>More controlled thinking</div>
-      <div>Consistent internal state</div>
-    </div>
-
+    <h2>What People Are Saying</h2>
+    <!-- KEEP YOUR EXISTING TESTIMONIAL CODE HERE -->
   </div>
 </section>
 
 <!-- CTA -->
 <section class="section cta">
 
-  <a class="cta-elite" href="https://buy.stripe.com/8x2aEY9Cn78HaFp6M23oA0a">
-    BEGIN RESET
+  <a class="cta-elite" href="#">
+    ENTER THE STACK
   </a>
 
-  <p class="micro">
-    10 minutes • No overwhelm • Cancel anytime
+  <p style="margin-top:15px; font-size:12px; color:#777;">
+    Choose your entry point • Start immediately
   </p>
 
 </section>
