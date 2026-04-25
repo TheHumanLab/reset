@@ -17,6 +17,11 @@
   --olive: #6b705c;
 }
 
+/* RESET */
+* {
+  box-sizing: border-box;
+}
+
 /* BASE */
 body {
   margin: 0;
@@ -34,15 +39,15 @@ h1, h2, h3 {
 
 p {
   color: #555;
-  line-height: 1.6;
+  margin-top: 10px;
 }
 
 /* NAV */
 .topbar {
   position: fixed;
   width: 100%;
-  background: rgba(245,243,239,0.95);
-  border-bottom: 1px solid #e5e5e5;
+  background: var(--cream);
+  border-bottom: 1px solid #ddd;
   z-index: 1000;
 }
 
@@ -70,12 +75,13 @@ p {
 
 /* HERO */
 .hero {
-  padding: 180px 20px 120px;
+  padding: 140px 20px 120px;
   text-align: center;
 }
 
 .hero h1 {
-  font-size: 72px;
+  font-size: 78px;
+  margin-top: 20px;
 }
 
 .hero p {
@@ -85,10 +91,6 @@ p {
 
 .hero-actions {
   margin-top: 40px;
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  flex-wrap: wrap;
 }
 
 .btn-primary {
@@ -96,7 +98,7 @@ p {
   color: white;
   padding: 16px 34px;
   text-decoration: none;
-  font-size: 13px;
+  margin-right: 10px;
 }
 
 .btn-secondary {
@@ -104,7 +106,6 @@ p {
   padding: 16px 34px;
   text-decoration: none;
   color: var(--black);
-  font-size: 13px;
 }
 
 /* SECTION */
@@ -119,7 +120,6 @@ p {
 
 /* TITLE */
 .section-title {
-  text-align: center;
   font-size: 42px;
 }
 
@@ -145,9 +145,9 @@ p {
 
 /* ITEM */
 .stack-item {
-  border: 1px solid #ddd;
   background: white;
-  transition: all 0.3s ease;
+  border: 1px solid #ddd;
+  transition: 0.3s;
 }
 
 .stack-item:hover {
@@ -155,7 +155,7 @@ p {
   border-color: #aaa;
 }
 
-/* EXECUTE EMPHASIS */
+/* EXECUTE highlight */
 .stack-item:nth-child(5) {
   border: 2px solid var(--olive);
 }
@@ -169,8 +169,7 @@ p {
 
 /* CONTENT */
 .stack-item h3 {
-  padding: 20px 20px 0;
-  font-size: 26px;
+  padding: 20px;
 }
 
 .stack-item p {
@@ -178,14 +177,13 @@ p {
 }
 
 .buy-btn {
-  margin: 20px;
   display: inline-block;
+  margin: 20px;
   padding: 12px 20px;
   border: 1px solid var(--black);
   text-decoration: none;
   color: var(--black);
   font-size: 12px;
-  transition: all 0.25s ease;
 }
 
 .buy-btn:hover {
@@ -204,7 +202,6 @@ p {
   color: white;
   padding: 18px 60px;
   text-decoration: none;
-  font-size: 14px;
 }
 
 </style>
