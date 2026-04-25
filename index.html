@@ -78,7 +78,6 @@ p {
 .hero h1 {
   font-size: 60px;
   color: #111;
-  line-height: 1.05;
 }
 
 .hero p {
@@ -93,7 +92,6 @@ p {
   background: #111;
   color: #fff;
   text-decoration: none;
-  display: inline-block;
 }
 
 /* SECTION */
@@ -106,18 +104,31 @@ p {
   margin: auto;
 }
 
-/* GRID */
+/* GRID 3 + 3 */
 .stack-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
-  gap: 25px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
   margin-top: 60px;
 }
 
-/* ITEMS */
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .stack-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .stack-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ITEM */
 .stack-item {
   border: 1px solid rgba(255,255,255,0.08);
-  padding: 35px;
+  overflow: hidden;
   transition: all 0.35s ease;
   opacity: 0;
   transform: translateY(40px);
@@ -133,24 +144,41 @@ p {
   transform: translateY(-4px);
 }
 
-/* EXECUTION HIGHLIGHT */
+/* EXECUTION EMPHASIS */
 .stack-item:nth-child(5) {
   border: 1px solid rgba(255,255,255,0.3);
 }
 
-/* IMAGE */
+/* IMAGE FULL BLEED */
 .product-img {
   width: 100%;
-  height: 200px;
+  height: 240px;
   object-fit: cover;
-  margin-bottom: 18px;
-  filter: grayscale(100%) contrast(1.1);
+  display: block;
+  filter: grayscale(100%) contrast(1.05);
   transition: all 0.4s ease;
 }
 
 .stack-item:hover .product-img {
   filter: grayscale(0%) contrast(1.2);
-  transform: scale(1.02);
+  transform: scale(1.03);
+}
+
+/* CONTENT */
+.stack-item h3,
+.stack-item p,
+.stack-item .buy-btn {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.stack-item h3 {
+  margin-top: 20px;
+  letter-spacing: 1px;
+}
+
+.stack-item .buy-btn {
+  margin-bottom: 24px;
 }
 
 /* BUTTON */
@@ -185,10 +213,6 @@ p {
   color: #666;
 }
 
-.content h3 {
-  font-size: 24px;
-}
-
 /* TESTIMONIALS */
 .testimonials {
   background: #111;
@@ -219,7 +243,6 @@ p {
 
 <body>
 
-<!-- NAV -->
 <header class="topbar">
   <div class="topbar-inner">
     <div class="logo">THE HUMAN STACK™</div>
@@ -230,7 +253,6 @@ p {
   </div>
 </header>
 
-<!-- HERO -->
 <section class="hero">
   <h1>You don’t need motivation.<br>You need control.</h1>
   <p>
@@ -240,7 +262,6 @@ p {
   <a class="btn-dark" href="#stack">Find Your Starting Point</a>
 </section>
 
-<!-- STACK -->
 <section class="section" id="stack">
   <div class="container">
 
@@ -295,40 +316,20 @@ p {
   </div>
 </section>
 
-<!-- SYSTEM -->
 <section class="section" id="system">
   <div class="container">
-
     <h2>The System</h2>
-
-    <div class="list">
-
-      <div class="item"><div class="meta">01</div><div class="content"><h3>Reset</h3><p>Interrupt behaviour before it compounds.</p></div></div>
-      <div class="item"><div class="meta">02</div><div class="content"><h3>Regulate</h3><p>Stabilise internal state before action.</p></div></div>
-      <div class="item"><div class="meta">03</div><div class="content"><h3>Decision</h3><p>End delay. Choose direction.</p></div></div>
-      <div class="item"><div class="meta">04</div><div class="content"><h3>Direction</h3><p>Define what matters.</p></div></div>
-      <div class="item"><div class="meta">05</div><div class="content"><h3>Execution</h3><p>Start and complete work.</p></div></div>
-      <div class="item"><div class="meta">06</div><div class="content"><h3>Rebuild</h3><p>Restore capacity and consistency.</p></div></div>
-
-    </div>
-
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
 <section class="section testimonials">
   <div class="container">
-
     <h2>What People Notice</h2>
-
-    <div class="testimonial"><p>“I start faster now. There’s no delay anymore.”</p></div>
-    <div class="testimonial"><p>“It forces you into action. That’s the difference.”</p></div>
-    <div class="testimonial"><p>“I didn’t realise how automatic I was until this.”</p></div>
-
+    <div class="testimonial"><p>“I start faster now.”</p></div>
+    <div class="testimonial"><p>“It forces action.”</p></div>
   </div>
 </section>
 
-<!-- CTA -->
 <section class="section cta">
   <a class="cta-elite" href="/execution.html">ENTER THE STACK</a>
 </section>
