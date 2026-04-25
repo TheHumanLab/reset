@@ -79,6 +79,59 @@
   line-height: 1.6;
   color: #444;
 }
+.reveal-section {
+  padding: 100px 20px;
+  background: #f7f6f2;
+  text-align: center;
+}
+
+.reveal-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  max-width: 1000px;
+  margin: 60px auto 0;
+}
+
+.reveal-item {
+  background: #fff;
+  padding: 30px;
+  border: 1px solid #e8e6e1;
+  text-align: left;
+  transition: all 0.2s ease;
+}
+
+.reveal-item:hover {
+  transform: translateY(-4px);
+  border-color: #cfcac0;
+}
+
+.reveal-item span {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #999;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.reveal-item h4 {
+  margin-bottom: 10px;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.reveal-item p {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .reveal-grid {
+    grid-template-columns: 1fr;
+  }
+}
   /* MOBILE FIX */
 @media (max-width: 768px) {
   .explain-grid {
@@ -503,7 +556,42 @@ For when you feel stuck, overwhelmed, or avoiding what matters.
   </div>
 </section>
 <section class="inside-box">
+<section class="reveal-section">
 
+  <h2>OPEN THE SYSTEM</h2>
+  <p class="section-intro">
+  This isn’t a box you read. It’s a system you enter.
+  </p>
+
+  <div class="reveal-grid">
+
+    <div class="reveal-item">
+      <span>01</span>
+      <h4>You open it</h4>
+      <p>No clutter. No noise. Just the system in front of you.</p>
+    </div>
+
+    <div class="reveal-item">
+      <span>02</span>
+      <h4>You recognise the state</h4>
+      <p>It becomes obvious where you are—and what to do next.</p>
+    </div>
+
+    <div class="reveal-item">
+      <span>03</span>
+      <h4>You act immediately</h4>
+      <p>No thinking. The system moves you.</p>
+    </div>
+
+    <div class="reveal-item">
+      <span>04</span>
+      <h4>You reset</h4>
+      <p>You don’t spiral. You regain control.</p>
+    </div>
+
+  </div>
+
+</section>
   <h2>WHAT’S INSIDE THE BOX</h2>
  <p class="section-intro">
 This is not content. It’s a physical system designed to shift your state on command.
