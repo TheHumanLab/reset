@@ -19,67 +19,98 @@
   text-align: center;
 }
 
-.inside-box h2 {
-  font-size: 32px;
-  margin-bottom: 20px;
-}
-.inside-box {
-  margin-top: 100px;
-}
-.section-intro {
-  max-width: 600px;
-  margin: 0 auto 60px;
-  color: #666;
-  font-size: 15px;
-  line-height: 1.6;
+/* INSIDE BOX – HORIZONTAL PREMIUM LAYOUT */
+
+.inside-horizontal {
+  padding: 120px 20px;
+  background: #f7f6f2;
 }
 
-.inside-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  max-width: 1000px;
+.inside-wrap {
+  max-width: 1200px;
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 80px;
+  align-items: center;
 }
 
-.inside-item {
-  text-align: left;
-  
+/* IMAGE */
+
+.inside-visual img {
+  width: 100%;
+  display: block;
+  border-radius: 2px;
 }
 
-.inside-item h4 {
-  font-size: 12px;
-  letter-spacing: 2px;
-  margin-bottom: 10px;
+/* TEXT */
+
+.inside-content h2 {
+  font-size: 34px;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
 }
 
-.inside-item p {
-  font-size: 14px;
+.inside-sub {
+  font-size: 16px;
   color: #555;
+  margin-bottom: 40px;
   line-height: 1.6;
 }
-.inside-item {
-  padding: 28px;
-  border: 1px solid #e8e6e1;
-  background: #ffffff;
-  transition: all 0.2s ease;
+
+/* POINTS GRID */
+
+.inside-points {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 30px;
 }
 
-.inside-item:hover {
-  border-color: #cfcac0;
-  transform: translateY(-3px);
-}
-
-.inside-item h4 {
-  letter-spacing: 2px;
-  font-size: 12px;
-  margin-bottom: 10px;
-}
-
-.inside-item p {
+.inside-points span {
   font-size: 14px;
-  line-height: 1.6;
-  color: #444;
+  letter-spacing: 1px;
+  color: #111;
+  position: relative;
+  padding-left: 18px;
+}
+
+/* subtle premium dot */
+
+.inside-points span::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: #cfcac0;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 7px;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+  .inside-wrap {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .inside-content {
+    text-align: center;
+  }
+
+  .inside-points {
+    grid-template-columns: 1fr;
+  }
+
+  .inside-points span {
+    padding-left: 0;
+  }
+
+  .inside-points span::before {
+    display: none;
+  }
+}
 }
 .reveal-section {
   padding: 80px 20px 40px;
@@ -593,80 +624,38 @@ For when you feel stuck, overwhelmed, or avoiding what matters.
     </div>
 
   </div>
-<p class="section-intro">
-Every box is built for a specific state — but the system structure remains the same.
-</p>
+<section class="inside-horizontal">
 
-<div class="inside-preview">
+  <div class="inside-wrap">
 
-  <div class="inside-preview-item">
-    <h4>PROTOCOL CARDS</h4>
-    <p>Short sequences designed for immediate action.</p>
+    <!-- LEFT: IMAGE -->
+    <div class="inside-visual">
+      <img src="YOUR-IMAGE-HERE.jpg" alt="The Human Stack System" />
+    </div>
+
+    <!-- RIGHT: CONTENT -->
+    <div class="inside-content">
+
+      <h2>WHAT’S INSIDE THE BOX</h2>
+
+      <p class="inside-sub">
+        A physical system designed to move you from state → action.
+      </p>
+
+      <div class="inside-points">
+        <span>Clear protocol</span>
+        <span>Immediate direction</span>
+        <span>Physical trigger</span>
+        <span>State reset</span>
+        <span>Reinforcement layer</span>
+        <span>Built-in follow-through</span>
+      </div>
+
+    </div>
+
   </div>
 
-  <div class="inside-preview-item">
-    <h4>STATE MAPS</h4>
-    <p>Recognise where you are — fast.</p>
-  </div>
-
-  <div class="inside-preview-item">
-    <h4>EXECUTION STRIPS</h4>
-    <p>Simple actions. No thinking required.</p>
-  </div>
-
-  <div class="inside-preview-item">
-    <h4>PHYSICAL TRIGGERS</h4>
-    <p>Interrupt autopilot instantly.</p>
-  </div>
-
-  <div class="inside-preview-item">
-    <h4>RESET ELEMENTS</h4>
-    <p>Shift your state on command.</p>
-  </div>
-
-  <div class="inside-preview-item">
-    <h4>STATE LOCKS</h4>
-    <p>Hold the change long enough to stabilise.</p>
-  </div>
-
-</div>
 </section>
-  <h2>WHAT’S INSIDE THE BOX</h2>
- <p class="section-intro">
-This is not content. It’s a physical system designed to shift your state on command.
-</p>
-
-  <div class="inside-grid">
-
-    <div class="inside-item">
-      <h4>THE PROTOCOL</h4>
-      <p>A clear, step-by-step sequence for the exact state you’re in. No interpretation. No overthinking.</p>
-    </div>
-
-    <div class="inside-item">
-      <h4>STATE MAP</h4>
-      <p>Know exactly what to use, when. Turn confusion into immediate direction.</p>
-    </div>
-
-    <div class="inside-item">
-      <h4>EXECUTION STRIP</h4>
-      <p>Simple actions you can follow instantly. Designed to move you forward, not keep you thinking.</p>
-    </div>
-
-    <div class="inside-item">
-      <h4>ENVIRONMENT TRIGGER</h4>
-      <p>A physical cue that interrupts autopilot and brings you back into control.</p>
-    </div>
-
-    <div class="inside-item">
-      <h4>RESET MECHANISM</h4>
-      <p>A structured reset that signals one thing: you’re back in charge.</p>
-    </div>
-
-    <div class="inside-item">
-  <h4>STATE LOCK</h4>
-  <p>A physical or visual anchor that holds you in the state long enough for it to stabilise.</p>
-</div>
 
   </div>
 <section class="testimonials">
