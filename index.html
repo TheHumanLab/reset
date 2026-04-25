@@ -112,7 +112,6 @@ p {
   margin-top: 60px;
 }
 
-/* RESPONSIVE */
 @media (max-width: 900px) {
   .stack-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -149,7 +148,7 @@ p {
   border: 1px solid rgba(255,255,255,0.3);
 }
 
-/* IMAGE FULL BLEED */
+/* IMAGE */
 .product-img {
   width: 100%;
   height: 240px;
@@ -199,18 +198,32 @@ p {
   color: #000;
 }
 
-/* SYSTEM */
+/* SYSTEM — FIXED + DEPTH */
 .list .item {
   display: grid;
   grid-template-columns: 70px 1fr;
-  padding: 32px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  padding: 40px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.list .item:last-child {
+  border-bottom: none;
 }
 
 .meta {
   font-size: 11px;
   letter-spacing: 2px;
-  color: #666;
+  color: #555;
+  padding-top: 6px;
+}
+
+.content p:first-of-type {
+  color: #eaeaea;
+}
+
+.content p:last-of-type {
+  font-size: 14px;
+  opacity: 0.6;
 }
 
 /* TESTIMONIALS */
@@ -227,6 +240,8 @@ p {
 /* CTA */
 .cta {
   text-align: center;
+  padding-top: 80px;
+  padding-bottom: 120px;
 }
 
 .cta-elite {
@@ -264,7 +279,6 @@ p {
 
 <section class="section" id="stack">
   <div class="container">
-
     <h2>Where are you stuck?</h2>
 
     <div class="stack-grid">
@@ -312,13 +326,11 @@ p {
       </div>
 
     </div>
-
   </div>
 </section>
 
 <section class="section" id="system">
   <div class="container">
-
     <h2>The System</h2>
 
     <p style="max-width:600px; margin-top:15px;">
@@ -328,41 +340,21 @@ p {
 
     <div class="list" style="margin-top:60px;">
 
-     /* SYSTEM — UPGRADED DEPTH */
-.list .item {
-  display: grid;
-  grid-template-columns: 70px 1fr;
-  padding: 40px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-
-.list .item:last-child {
-  border-bottom: none;
-}
-
-.meta {
-  font-size: 11px;
-  letter-spacing: 2px;
-  color: #555;
-  padding-top: 6px;
-}
-
-/* TEXT DEPTH */
-.content p:first-of-type {
-  color: #eaeaea;
-}
-
-.content p:last-of-type {
-  font-size: 14px;
-  opacity: 0.6;
-}
+      <div class="item">
+        <div class="meta">01</div>
+        <div class="content">
+          <h3>Interrupt</h3>
+          <p>You drift without noticing.</p>
+          <p>The system forces awareness in real time.</p>
+        </div>
+      </div>
 
       <div class="item">
         <div class="meta">02</div>
         <div class="content">
           <h3>Stabilise</h3>
           <p>Your internal state overrides control.</p>
-          <p style="opacity:0.6;">You act from noise, not clarity.</p>
+          <p>You act from noise, not clarity.</p>
         </div>
       </div>
 
@@ -371,7 +363,7 @@ p {
         <div class="content">
           <h3>Decide</h3>
           <p>You already know—but delay replaces action.</p>
-          <p style="opacity:0.6;">The system removes options and forces choice.</p>
+          <p>The system removes options and forces choice.</p>
         </div>
       </div>
 
@@ -380,7 +372,7 @@ p {
         <div class="content">
           <h3>Direct</h3>
           <p>You try to do everything—and progress stalls.</p>
-          <p style="opacity:0.6;">Only one direction matters.</p>
+          <p>Only one direction matters.</p>
         </div>
       </div>
 
@@ -388,8 +380,8 @@ p {
         <div class="meta">05</div>
         <div class="content">
           <h3>Execute</h3>
-          <p>You don’t start, or you stop halfway.</p>
-          <p style="opacity:0.6;">The system removes hesitation completely.</p>
+          <p>You don’t start, or stop halfway.</p>
+          <p>The system removes hesitation.</p>
         </div>
       </div>
 
@@ -398,12 +390,11 @@ p {
         <div class="content">
           <h3>Rebuild</h3>
           <p>You’ve lost consistency and capacity.</p>
-          <p style="opacity:0.6;">This restores it gradually.</p>
+          <p>This restores it gradually.</p>
         </div>
       </div>
 
     </div>
-
   </div>
 </section>
 
@@ -421,7 +412,6 @@ p {
 
 <script>
 const items = document.querySelectorAll('.stack-item');
-
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if(entry.isIntersecting){
