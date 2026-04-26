@@ -4,28 +4,48 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>THE HUMAN STACK™ — Behavioural Control Systems</title>
-  <meta name="description" content="Behavioural control tools for overthinking, procrastination, overwhelm, and loops you can't stop. Not self-help. Not productivity systems. Real-time intervention.">
+  <meta name="description" content="Six behavioural instruments for overthinking, procrastination, overwhelm, and loops you can't stop. Not self-help. Real-time intervention.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --black:#000000; 
+      --bg:#403D3D; 
+      --bg-dark:#2E2C2C;
       --white:#F5F5F5; 
       --creme:#E8E6E1;
       --olive:#6B6B5A;
       --grey:#1A1A1A;
-      --divider:#222222;
+      --divider:#4A4646;
+      --red:#E50914;
+      --navy:#1E3A8A;
+      --coral:#FF6B5A;
     }
     *{margin:0;padding:0;box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
-      background:var(--black);
+      background:var(--bg);
+      background-image: 
+        radial-gradient(ellipse at top left, rgba(64,61,0.8) 0%, transparent 50%),
+        radial-gradient(ellipse at bottom right, var(--bg-dark) 0%, transparent 50%),
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
       color:var(--white);
       font-family:'Inter',sans-serif;
       font-size:16px;
       line-height:1.6;
       -webkit-font-smoothing:antialiased;
+      position:relative;
+    }
+    body::before{
+      content:'';
+      position:fixed;
+      top:0;
+      left:0;
+      right:0;
+      bottom:0;
+      background:linear-gradient(180deg, rgba(46,44,0.4) 0%, rgba(64,61,61,0) 100%);
+      pointer-events:none;
+      z-index:1;
     }
     
     /* HEADER */
@@ -34,7 +54,8 @@
       top:0;
       left:0;
       right:0;
-      background:var(--black);
+      background:rgba(46,44,44,0.85);
+      backdrop-filter:blur(12px);
       border-bottom:1px solid var(--divider);
       z-index:100;
     }
@@ -55,7 +76,7 @@
     }
     .header-cta{
       background:var(--white);
-      color:var(--black);
+      color:var(--bg);
       border:none;
       padding:12px 24px;
       font-family:'Inter',sans-serif;
@@ -66,8 +87,14 @@
       cursor:pointer;
       text-decoration:none;
       border-radius:0;
+      box-shadow:0 2px 8px rgba(0,0,0,0.3);
+      transition:all 0.2s;
     }
-    .header-cta:hover{background:var(--creme)}
+    .header-cta:hover{
+      background:var(--creme);
+      box-shadow:0 4px 12px rgba(0,0,0,0.4);
+      transform:translateY(-1px);
+    }
     
     /* HERO */
     .hero{
@@ -77,6 +104,8 @@
       justify-content:center;
       padding:120px 32px 80px 32px;
       text-align:left;
+      position:relative;
+      z-index:2;
     }
     .hero-inner{
       max-width:1400px;
@@ -90,13 +119,14 @@
       line-height:0.8;
       font-weight:400;
       margin-bottom:40px;
+      text-shadow:0 4px 24px rgba(0,0,0,0.5);
     }
     .hero-sub{
       font-size:16px;
       line-height:1.6;
       max-width:480px;
       margin-bottom:16px;
-      color:#999;
+      color:#B8B8B8;
     }
     .hero-cta{
       background:transparent;
@@ -114,6 +144,7 @@
       margin-top:32px;
       border-bottom:1px solid var(--creme);
       padding-bottom:4px;
+      transition:opacity 0.2s;
     }
     .hero-cta:hover{opacity:0.7}
     
@@ -123,6 +154,9 @@
       border-top:1px solid var(--divider);
       max-width:1400px;
       margin:0 auto;
+      position:relative;
+      z-index:2;
+      background:linear-gradient(180deg, transparent 0%, rgba(46,44,44,0.3) 100%);
     }
     .section-label{
       font-size:11px;
@@ -140,6 +174,7 @@
       line-height:0.9;
       font-weight:400;
       margin-bottom:48px;
+      text-shadow:0 2px 16px rgba(0,0,0,0.4);
     }
     h3{
       font-family:'Bebas Neue',sans-serif;
@@ -166,8 +201,9 @@
     .step-num{
       font-family:'Bebas Neue',sans-serif;
       font-size:120px;
-      color:var(--divider);
+      color:rgba(74,70,70,0.5);
       line-height:0.8;
+      text-shadow:0 2px 8px rgba(0,0,0,0.3);
     }
     .step-title{
       font-family:'Bebas Neue',sans-serif;
@@ -178,7 +214,7 @@
     }
     .step-text{
       font-size:16px;
-      color:#999;
+      color:#B8B8B8;
       max-width:500px;
     }
     .step-text strong{color:var(--creme)}
@@ -190,18 +226,24 @@
       gap:1px;
       background:var(--divider);
       margin-top:64px;
+      box-shadow:0 8px 32px rgba(0,0,0,0.3);
     }
     .protocol{
-      background:var(--black);
+      background:linear-gradient(135deg, var(--bg) 0%, var(--bg-dark) 100%);
       padding:48px 40px;
       display:flex;
       flex-direction:column;
+      transition:background 0.3s;
+      position:relative;
+    }
+    .protocol:hover{
+      background:linear-gradient(135deg, var(--bg-dark) 0%, var(--bg) 100%);
     }
     .protocol-state{
       font-size:11px;
       text-transform:uppercase;
       letter-spacing:0.15em;
-      color:#666;
+      color:#888;
       margin-bottom:24px;
     }
     .protocol-desc{
@@ -225,10 +267,11 @@
       letter-spacing:-0.02em;
       line-height:1;
       margin-bottom:32px;
+      text-shadow:0 2px 12px rgba(0,0,0,0.3);
     }
     .btn{
       background:var(--white);
-      color:var(--black);
+      color:var(--bg);
       border:none;
       padding:20px 48px;
       font-family:'Inter',sans-serif;
@@ -242,8 +285,34 @@
       display:block;
       text-align:center;
       border-radius:0;
+      box-shadow:0 2px 8px rgba(0,0,0,0.3);
+      transition:all 0.2s;
     }
-    .btn:hover{background:var(--creme)}
+    .btn:hover{
+      background:var(--creme);
+      box-shadow:0 4px 12px rgba(0,0,0,0.4);
+      transform:translateY(-1px);
+    }
+    .btn-red{
+      background:var(--red);
+      color:var(--white);
+    }
+    .btn-red:hover{
+      background:#C40812;
+    }
+    .accent-line{
+      position:absolute;
+      top:0;
+      left:0;
+      width:4px;
+      height:100%;
+    }
+    .accent-red{background:var(--red)}
+    .accent-coral{background:var(--coral)}
+    .accent-navy{background:var(--navy)}
+    .accent-creme{background:var(--creme)}
+    .accent-olive{background:var(--olive)}
+    .accent-grey{background:#808080}
     
     /* CLOSING */
     .closing{
@@ -251,6 +320,8 @@
       padding:64px 48px;
       margin:80px 0;
       text-align:center;
+      background:linear-gradient(135deg, rgba(46,44,44,0.6) 0%, rgba(64,61,61,0.3) 100%);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,0.05), 0 8px 32px rgba(0,0,0,0.4);
     }
     .closing h3{
       font-family:'Bebas Neue',sans-serif;
@@ -276,10 +347,12 @@
       max-width:1400px;
       margin:0 auto;
       font-size:11px;
-      color:#666;
+      color:#888;
       text-transform:uppercase;
       letter-spacing:0.1em;
       border-top:1px solid var(--divider);
+      position:relative;
+      z-index:2;
     }
     
     @media(max-width:768px){
@@ -308,7 +381,7 @@
     <div class="hero-inner">
       <h1>CONTROL IS<br>A CHOICE.</h1>
       <p class="hero-sub">Six tools. Six states. No confusion.</p>
-      <p class="hero-sub">For when you're stuck, overwhelmed, or avoiding what matters.</p>
+      <p class="hero-sub">For when you’ve opened Instagram 14 times since breakfast and hate yourself for it, or the thought you’ve run over a million times but you can’t timetravel and change what’s done.</p>
       <a href="#how" class="hero-cta">HOW IT WORKS</a>
     </div>
   </section>
@@ -356,61 +429,67 @@
   <section class="section" id="protocols">
     <div class="section-label">THE 6 PROTOCOLS</div>
     <h2>BEHAVIOURAL<br>CONTROL TOOLS.</h2>
-    <p style="font-size:18px;color:#999;margin-bottom:0;">Not self-help. Not content.</p>
+    <p style="font-size:18px;color:#999;margin-bottom:0;">Not self-help. Not content. Intervention.</p>
     
     <div class="protocol-grid">
       <div class="protocol">
+        <div class="accent-line accent-red"></div>
         <h3>INTERRUPT</h3>
         <div class="protocol-state">STATE: “I CAN’T STOP”</div>
         <p class="protocol-desc">You’re in the loop. Scrolling. Avoiding. Repeating.<br>This protocol hijacks the pattern mid-execution and installs a controlled action.</p>
         <div class="protocol-arrow">→ Kill the behaviour while it’s happening. Not after.</div>
         <div class="protocol-price">$29</div>
-        <a href="https://buy.stripe.com/YOUR_INTERRUPT_LINK" class="btn">BUY INTERRUPT</a>
+        <a href="https://buy.stripe.com/YOUR_INTERRUPT_LINK" class="btn btn-red">BUY INTERRUPT</a>
       </div>
 
       <div class="protocol">
-        <h3>INITIATE</h3>
-        <div class="protocol-state">STATE: “I CAN’T START”</div>
-        <p class="protocol-desc">You know the move. You’re not making it.<br>This protocol bypasses resistance and forces the first 10 seconds.</p>
-        <div class="protocol-arrow">→ Start before your brain talks you out of it.</div>
-        <div class="protocol-price">$29</div>
-        <button class="btn" style="background:var(--grey);color:#666;cursor:not-allowed;">COMING SOON</button>
+        <div class="accent-line accent-coral"></div>
+        <h3>STABILISE</h3>
+        <div class="protocol-state">STATE: “I’M OVERWHELMED”</div>
+        <p class="protocol-desc">Everything feels equally urgent. Mental noise. System pressure.<br>This protocol reduces internal load and restores accuracy.</p>
+        <div class="protocol-arrow">→ Redistribute the load. Regain clarity.</div>
+        <div class="protocol-price">$49</div>
+        <a href="https://buy.stripe.com/YOUR_STABILISE_LINK" class="btn">BUY STABILISE</a>
       </div>
 
       <div class="protocol">
-        <h3>FOCUS</h3>
-        <div class="protocol-state">STATE: “I KEEP DRIFTING”</div>
-        <p class="protocol-desc">You start. Then you scatter. Everything steals your attention.<br>This protocol locks you onto one target and kills the noise.</p>
-        <div class="protocol-arrow">→ Finish one thing. Like an adult.</div>
-        <div class="protocol-price">$29</div>
-        <button class="btn" style="background:var(--grey);color:#666;cursor:not-allowed;">COMING SOON</button>
-      </div>
-
-      <div class="protocol">
-        <h3>RESET</h3>
-        <div class="protocol-state">STATE: “I FEEL OFF”</div>
-        <p class="protocol-desc">Low signal. Fog. Disconnected from your own system.<br>This protocol recalibrates baseline so you can function again.</p>
-        <div class="protocol-arrow">→ Clear the static. Reboot yourself.</div>
-        <div class="protocol-price">$29</div>
-        <button class="btn" style="background:var(--grey);color:#666;cursor:not-allowed;">COMING SOON</button>
-      </div>
-
-      <div class="protocol">
+        <div class="accent-line accent-olive"></div>
         <h3>DECIDE</h3>
         <div class="protocol-state">STATE: “I’M STUCK BETWEEN OPTIONS”</div>
         <p class="protocol-desc">Overthinking. Researching. Looping the same decision for days.<br>This protocol severs indecision and forces movement.</p>
         <div class="protocol-arrow">→ Make the call. Live with it. Move.</div>
-        <div class="protocol-price">$29</div>
-        <button class="btn" style="background:var(--grey);color:#666;cursor:not-allowed;">COMING SOON</button>
+        <div class="protocol-price">$59</div>
+        <a href="https://buy.stripe.com/YOUR_DECIDE_LINK" class="btn">BUY DECIDE</a>
       </div>
 
       <div class="protocol">
-        <h3>REGULATE</h3>
-        <div class="protocol-state">STATE: “I’M OVERWHELMED”</div>
-        <p class="protocol-desc">Too much input. System overload. Fight-flight-freeze.<br>This protocol down-regulates your state so you can respond, not react.</p>
-        <div class="protocol-arrow">→ Turn the volume down. Get back online.</div>
-        <div class="protocol-price">$29</div>
-        <button class="btn" style="background:var(--grey);color:#666;cursor:not-allowed;">COMING SOON</button>
+        <div class="accent-line accent-creme"></div>
+        <h3>FOCUS</h3>
+        <div class="protocol-state">STATE: “I KEEP DRIFTING”</div>
+        <p class="protocol-desc">You start. Then you scatter. Everything steals your attention.<br>This protocol locks you onto one target and kills the noise.</p>
+        <div class="protocol-arrow">→ Finish one thing. Like an adult.</div>
+        <div class="protocol-price">$59</div>
+        <a href="https://buy.stripe.com/YOUR_FOCUS_LINK" class="btn">BUY FOCUS</a>
+      </div>
+
+      <div class="protocol">
+        <div class="accent-line accent-navy"></div>
+        <h3>EXECUTE</h3>
+        <div class="protocol-state">STATE: “I CAN’T START”</div>
+        <p class="protocol-desc">You know the move. You’re not making it.<br>This protocol bypasses resistance and forces the first 10 seconds.</p>
+        <div class="protocol-arrow">→ Start before your brain talks you out of it.</div>
+        <div class="protocol-price">$79</div>
+        <a href="https://buy.stripe.com/YOUR_EXECUTE_LINK" class="btn">BUY EXECUTE</a>
+      </div>
+
+      <div class="protocol">
+        <div class="accent-line accent-grey"></div>
+        <h3>RECLAIM</h3>
+        <div class="protocol-state">STATE: “I’VE LOST CONTROL”</div>
+        <p class="protocol-desc">System collapse. Routines broken. You don’t trust your state to act.<br>This protocol resets baseline and rebuilds movement.</p>
+        <div class="protocol-arrow">→ Reset. Start again. Reclaim control.</div>
+        <div class="protocol-price">$89</div>
+        <a href="https://buy.stripe.com/YOUR_RECLAIM_LINK" class="btn">BUY RECLAIM</a>
       </div>
     </div>
   </section>
