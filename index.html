@@ -266,6 +266,17 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+   @media (max-width: 900px) {
+  .protocol-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .protocol-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
     }
     .protocol{
