@@ -193,12 +193,23 @@ p {
 /* BUTTON */
 .buy-btn {
   display: inline-block;
-  padding: 12px 20px;
+  margin-top: 18px;
+  padding: 12px 22px;
+
   background: #111;
   color: #fff;
-  text-decoration: none;
+
   font-size: 13px;
   letter-spacing: 1px;
+  text-decoration: none;
+
+  border: 1px solid #111;
+
+  opacity: 1;              /* 🔥 FORCE VISIBLE */
+  transform: none;         /* 🔥 REMOVE HIDDEN SHIFT */
+  visibility: visible;     /* 🔥 JUST IN CASE */
+
+  transition: all 0.2s ease;
 }
 
 .buy-btn:hover { background: #000; }
