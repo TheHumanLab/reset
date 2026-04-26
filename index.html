@@ -11,16 +11,136 @@
 
 /* all your other CSS */
 
-.system-explain { ... }
-.explain-grid { ... }
-.inside-box {
-  padding: 100px 20px;
-  background: #ffffff;
+:root {
+  --black: #111;
+  --cream: #f7f7f5;
+  --olive: #6b705c;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: var(--cream);
+  color: var(--black);
+}
+
+/* TYPE */
+h1, h2, h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+p {
+  color: #555;
+  line-height: 1.6;
+}
+
+.micro {
+  font-size: 12px;
+  color: #777;
+  margin-top: 10px;
+}
+
+/* NAV */
+.topbar {
+  position: fixed;
+  width: 100%;
+  background: var(--cream);
+  border-bottom: 1px solid #ddd;
+  z-index: 1000;
+}
+
+.topbar-inner {
+  max-width: 1100px;
+  margin: auto;
+  padding: 18px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* HERO */
+.hero {
+  padding: 140px 20px 110px;
   text-align: center;
 }
 
-/* INSIDE BOX – HORIZONTAL PREMIUM LAYOUT */
+.hero h1 { font-size: 72px; }
 
+/* GRID */
+.stack-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1100px;
+  margin: 60px auto 0;
+}
+
+@media (max-width: 900px) {
+  .stack-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .stack-grid { grid-template-columns: 1fr; }
+}
+
+/* PRODUCT CARD */
+.stack-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 32px;
+  background: #fff;
+  border: 1px solid #e5e3dc;
+
+  box-shadow:
+    0 12px 28px rgba(0,0,0,0.06),
+    0 2px 4px rgba(0,0,0,0.04);
+
+  transition: all 0.2s ease;
+}
+
+.stack-item:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 20px 50px rgba(0,0,0,0.1);
+}
+
+.stack-item.featured {
+  border: 2px solid #111;
+}
+
+/* IMAGE */
+.product-img {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  background: #f7f6f2;
+  padding: 30px;
+  border-bottom: 1px solid #eee;
+}
+
+/* CONTENT */
+.stack-content { margin-top: 20px; }
+.stack-footer { margin-top: 20px; }
+
+/* BUTTON */
+.buy-btn {
+  display: inline-block;
+  padding: 12px 20px;
+  background: #111;
+  color: #fff;
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.buy-btn:hover { background: #000; }
+
+/* INSIDE SECTION */
 .inside-horizontal {
   padding: 120px 20px;
   background: #f7f6f2;
@@ -28,44 +148,16 @@
 
 .inside-wrap {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: auto;
   display: grid;
   grid-template-columns: 1.2fr 1fr;
   gap: 80px;
   align-items: center;
 }
 
-/* IMAGE */
-
 .inside-visual img {
   width: 100%;
-  display: block;
-  border-radius: 2px;
 }
-
-/* TEXT */
-
-.inside-content h2 {
-  font-size: 34px;
-  margin-bottom: 20px;
-  letter-spacing: 1px;
-}
-
-.inside-sub {
-  font-size: 16px;
-  color: #555;
-  margin-bottom: 40px;
-  line-height: 1.6;
-}
-
-.stack-item h3 {
-  letter-spacing: 1px;
-}
-
-.stack-item p {
-  color: #333;
-}
-  /* POINTS GRID */
 
 .inside-points {
   display: grid;
@@ -75,13 +167,9 @@
 
 .inside-points span {
   font-size: 14px;
-  letter-spacing: 1px;
-  color: #111;
+  padding-left: 14px;
   position: relative;
-  padding-left: 18px;
 }
-
-/* subtle premium dot */
 
 .inside-points span::before {
   content: "";
@@ -728,7 +816,6 @@ For when you feel stuck, overwhelmed, or avoiding what matters.
     </div>
   </div>
 </section>
-<section class="inside-box">
 <section class="reveal-section">
 
   <h2>OPEN THE SYSTEM</h2>
