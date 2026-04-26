@@ -502,6 +502,14 @@ h3 {
 .section p {
   font-size: 15px;
 }
+ /* === HERO TITLE OVERRIDE === */
+
+.hero-title {
+  font-size: clamp(72px, 10vw, 160px);
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  max-width: 100%;
+}
   </style>
 </head>
 <body>
@@ -516,7 +524,7 @@ h3 {
   <!-- HERO -->
   <section class="hero">
     <div class="hero-inner">
-      <h1>CONTROL IS<br>A CHOICE.</h1>
+    <h1 class="hero-title">CONTROL IS A CHOICE.</h1>
       <p class="hero-sub">Six tools. Six states. No confusion.</p>
       <p class="hero-sub">Run instantly online.<br>Upgrade to physical systems if you want to go deeper.</p>
       <div class="divider" style="max-width:480px;margin:48px 0;"></div>
