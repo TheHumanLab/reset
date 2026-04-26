@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>THE HUMAN STACK™ — Behavioural Control Systems</title>
+  <meta name="description" content="Behavioural control tools for overthinking, procrastination, overwhelm, and loops you can't stop. Not self-help. Not productivity systems. Real-time intervention.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -11,7 +12,8 @@
     :root {
       --black:#000000; 
       --white:#F5F5F5; 
-      --red:#E50914; 
+      --creme:#E8E6E1;
+      --olive:#6B6B5A;
       --grey:#1A1A1A;
       --divider:#222222;
     }
@@ -22,7 +24,7 @@
       color:var(--white);
       font-family:'Inter',sans-serif;
       font-size:16px;
-      line-height:1.5;
+      line-height:1.6;
       -webkit-font-smoothing:antialiased;
     }
     
@@ -48,12 +50,12 @@
       font-size:11px;
       text-transform:uppercase;
       letter-spacing:0.2em;
-      color:var(--white);
+      color:var(--creme);
       font-weight:600;
     }
     .header-cta{
-      background:var(--red);
-      color:var(--white);
+      background:var(--white);
+      color:var(--black);
       border:none;
       padding:12px 24px;
       font-family:'Inter',sans-serif;
@@ -65,8 +67,9 @@
       text-decoration:none;
       border-radius:0;
     }
+    .header-cta:hover{background:var(--creme)}
     
-    /* HERO - CONTROL IS A CHOICE */
+    /* HERO */
     .hero{
       min-height:100vh;
       display:flex;
@@ -97,7 +100,7 @@
     }
     .hero-cta{
       background:transparent;
-      color:var(--red);
+      color:var(--creme);
       border:none;
       padding:0;
       font-family:'Inter',sans-serif;
@@ -109,7 +112,7 @@
       text-decoration:none;
       display:inline-block;
       margin-top:32px;
-      border-bottom:1px solid var(--red);
+      border-bottom:1px solid var(--creme);
       padding-bottom:4px;
     }
     .hero-cta:hover{opacity:0.7}
@@ -125,7 +128,7 @@
       font-size:11px;
       text-transform:uppercase;
       letter-spacing:0.2em;
-      color:var(--red);
+      color:var(--olive);
       font-weight:700;
       margin-bottom:24px;
     }
@@ -136,7 +139,7 @@
       letter-spacing:-0.02em;
       line-height:0.9;
       font-weight:400;
-      margin-bottom:32px;
+      margin-bottom:48px;
     }
     h3{
       font-family:'Bebas Neue',sans-serif;
@@ -147,56 +150,85 @@
       font-weight:400;
       margin-bottom:12px;
     }
+    p{color:#CCC;font-size:16px;margin-bottom:20px;max-width:620px}
+    strong{font-weight:700;color:var(--white)}
     
-    /* PRODUCT */
-    .product{
-      border:1px solid var(--divider);
-      padding:48px;
-      margin-top:48px;
-      max-width:600px;
+    /* HOW IT WORKS */
+    .step{
+      padding:80px 0;
+      border-bottom:1px solid var(--divider);
+      display:grid;
+      grid-template-columns:120px 1fr;
+      gap:48px;
+      align-items:start;
     }
-    .product-state{
+    .step:last-child{border-bottom:none}
+    .step-num{
+      font-family:'Bebas Neue',sans-serif;
+      font-size:120px;
+      color:var(--divider);
+      line-height:0.8;
+    }
+    .step-title{
+      font-family:'Bebas Neue',sans-serif;
+      font-size:40px;
+      color:var(--white);
+      letter-spacing:-0.01em;
+      margin-bottom:16px;
+    }
+    .step-text{
+      font-size:16px;
+      color:#999;
+      max-width:500px;
+    }
+    .step-text strong{color:var(--creme)}
+    
+    /* PROTOCOLS */
+    .protocol-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+      gap:1px;
+      background:var(--divider);
+      margin-top:64px;
+    }
+    .protocol{
+      background:var(--black);
+      padding:48px 40px;
+      display:flex;
+      flex-direction:column;
+    }
+    .protocol-state{
       font-size:11px;
       text-transform:uppercase;
       letter-spacing:0.15em;
       color:#666;
       margin-bottom:24px;
     }
-    .product-desc{
-      font-size:16px;
+    .protocol-desc{
+      font-size:15px;
       line-height:1.7;
-      margin-bottom:32px;
+      margin-bottom:24px;
       color:#CCC;
+      flex-grow:1;
     }
-    .product-price{
+    .protocol-arrow{
+      font-family:'Inter',sans-serif;
+      font-size:14px;
+      color:var(--creme);
+      font-weight:700;
+      margin-bottom:32px;
+    }
+    .protocol-price{
       font-family:'Bebas Neue',sans-serif;
-      font-size:80px;
+      font-size:64px;
       color:var(--white);
       letter-spacing:-0.02em;
       line-height:1;
       margin-bottom:32px;
     }
-    .product ul{
-      list-style:none;
-      padding:0;
-      margin-bottom:40px;
-    }
-    .product li{
-      font-size:14px;
-      margin-bottom:12px;
-      padding-left:16px;
-      position:relative;
-      color:#999;
-    }
-    .product li:before{
-      content:'—';
-      position:absolute;
-      left:0;
-      color:var(--red);
-    }
     .btn{
-      background:var(--red);
-      color:var(--white);
+      background:var(--white);
+      color:var(--black);
       border:none;
       padding:20px 48px;
       font-family:'Inter',sans-serif;
@@ -211,31 +243,31 @@
       text-align:center;
       border-radius:0;
     }
+    .btn:hover{background:var(--creme)}
     
-    /* HOW IT WORKS */
-    .step{
-      padding:64px 0;
-      border-bottom:1px solid var(--divider);
+    /* CLOSING */
+    .closing{
+      border:1px solid var(--olive);
+      padding:64px 48px;
+      margin:80px 0;
+      text-align:center;
     }
-    .step:last-child{border-bottom:none}
-    .step-num{
+    .closing h3{
       font-family:'Bebas Neue',sans-serif;
-      font-size:80px;
-      color:var(--divider);
-      line-height:1;
-      margin-bottom:16px;
+      font-size:64px;
+      margin-bottom:24px;
+      line-height:0.9;
     }
-    .step-title{
-      font-family:'Bebas Neue',sans-serif;
-      font-size:40px;
+    .closing p{
+      font-size:18px;
+      color:var(--creme);
+      max-width:100%;
+    }
+    .closing strong{
+      font-size:24px;
+      display:block;
+      margin-top:32px;
       color:var(--white);
-      letter-spacing:-0.01em;
-      margin-bottom:16px;
-    }
-    .step-text{
-      font-size:16px;
-      color:#999;
-      max-width:500px;
     }
     
     /* FOOTER */
@@ -255,8 +287,10 @@
       .hero{padding:100px 24px 60px 24px;min-height:90vh}
       h1{margin-bottom:32px}
       .section{padding:80px 24px}
-      .product{padding:40px 32px}
-      .step{padding:48px 0}
+      .step{grid-template-columns:1fr;gap:24px;padding:56px 0}
+      .step-num{font-size:80px}
+      .protocol{padding:40px 32px}
+      .closing{padding:48px 32px}
     }
   </style>
 </head>
@@ -265,7 +299,7 @@
   <header class="header">
     <div class="header-inner">
       <div class="logo">THE HUMAN STACK™</div>
-      <a href="#interrupt" class="header-cta">EXECUTE</a>
+      <a href="#protocols" class="header-cta">EXECUTE</a>
     </div>
   </header>
 
@@ -275,49 +309,118 @@
       <h1>CONTROL IS<br>A CHOICE.</h1>
       <p class="hero-sub">Six tools. Six states. No confusion.</p>
       <p class="hero-sub">For when you're stuck, overwhelmed, or avoiding what matters.</p>
-      <a href="#interrupt" class="hero-cta">EXECUTE NOW</a>
+      <a href="#how" class="hero-cta">HOW IT WORKS</a>
     </div>
   </section>
 
-  <!-- INTERRUPT -->
-  <section class="section" id="interrupt">
-    <div class="section-label">PROTOCOL 01</div>
-    <h2>INTERRUPT</h2>
-    <div class="product">
-      <div class="product-state">STATE: I CAN'T STOP</div>
-      <p class="product-desc">A short, structured session to identify the pattern, break it once in real time, replace it with a new action, and lock that action in. This is not about thinking. It's about doing something different, immediately.</p>
-      <div class="product-price">$29</div>
-      <ul>
-        <li>Live digital protocol</li>
-        <li>Immediate access after payment</li>
-        <li>Loop identification + deconstruction</li>
-        <li>3-second execution rule</li>
-        <li>Locked protocol delivered in 12hrs</li>
-      </ul>
-      <a href="https://buy.stripe.com/YOUR_INTERRUPT_LINK" class="btn">BUY INTERRUPT — $29</a>
-    </div>
-  </section>
-
-  <!-- HOW THIS WORKS -->
-  <section class="section">
-    <div class="section-label">HOW THIS WORKS</div>
+  <!-- HOW IT WORKS -->
+  <section class="section" id="how">
+    <div class="section-label">HOW IT WORKS</div>
+    <h2>YOU DON’T NEED A<br>PRODUCTIVITY SYSTEM.</h2>
+    <p style="font-size:20px;color:var(--creme);margin-bottom:80px;">You need a behavioural interrupt for the state you’re in right now.</p>
     
     <div class="step">
       <div class="step-num">01</div>
-      <div class="step-title">IDENTIFY</div>
-      <p class="step-text">You don't browse. You recognise. State: I can't stop. State: Everything is falling apart. Pick the protocol that matches.</p>
+      <div>
+        <div class="step-title">IDENTIFY</div>
+        <p class="step-text"><strong>Stop scrolling. Start diagnosing.</strong><br><br>What’s running you right now?<br><strong>Stuck. Avoiding. Overthinking. Drained. Scattered. Can’t stop.</strong><br><br>Name the state. The tool selects itself.<br><strong>Clarity beats motivation. Every time.</strong></p>
+      </div>
     </div>
 
     <div class="step">
       <div class="step-num">02</div>
-      <div class="step-title">EXECUTE</div>
-      <p class="step-text">Pay. Get instant access. Complete the live protocol. No waiting. No homework. The interruption happens in real time.</p>
+      <div>
+        <div class="step-title">SELECT</div>
+        <p class="step-text"><strong>Each state has one protocol. Not six. One.</strong><br><br>No quizzes. No “discover your type.” No guru nonsense.<br><br><strong>Feel like shit? Pick the tool that matches.</strong><br>INTERRUPT for loops. INITIATE for paralysis. FOCUS for drift.<br><br><strong>You already know which one. Stop pretending you don’t.</strong></p>
+      </div>
     </div>
 
     <div class="step">
       <div class="step-num">03</div>
-      <div class="step-title">LOCK</div>
-      <p class="step-text">Submit. Receive your locked protocol in 12hrs. Reply with photo evidence to unlock THE HUMAN STACK™ BOX with physical instruments.</p>
+      <div>
+        <div class="step-title">EXECUTE</div>
+        <p class="step-text"><strong>Run it now. Not tonight. Not “when things calm down.”</strong><br><br>No prep. No PDFs to save. No tweaking the Notion template.<br><br><strong>You’re in the loop, or you’re out. 3 seconds to decide.</strong><br>Hesitate and your brain wins. Again.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">04</div>
+      <div>
+        <div class="step-title">SHIFT</div>
+        <p class="step-text"><strong>One action breaks the state.</strong><br><br>Not forever. Not your whole life.<br><strong>Just enough to take back control of the next 10 minutes.</strong><br><br>That’s the game.<br><strong>Intervene fast. Win small. Repeat.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROTOCOLS -->
+  <section class="section" id="protocols">
+    <div class="section-label">THE 6 PROTOCOLS</div>
+    <h2>BEHAVIOURAL<br>CONTROL TOOLS.</h2>
+    <p style="font-size:18px;color:#999;margin-bottom:0;">Not self-help. Not content.</p>
+    
+    <div class="protocol-grid">
+      <div class="protocol">
+        <h3>INTERRUPT</h3>
+        <div class="protocol-state">STATE: “I CAN’T STOP”</div>
+        <p class="protocol-desc">You’re in the loop. Scrolling. Avoiding. Repeating.<br>This protocol hijacks the pattern mid-execution and installs a controlled action.</p>
+        <div class="protocol-arrow">→ Kill the behaviour while it’s happening. Not after.</div>
+        <div class="protocol-price">$29</div>
+        <a href="https://buy.stripe.com/YOUR_INTERRUPT_LINK" class="btn">BUY INTERRUPT</a>
+      </div>
+
+      <div class="protocol">
+        <h3>INITIATE</h3>
+        <div class="protocol-state">STATE: “I CAN’T START”</div>
+        <p class="protocol-desc">You know the move. You’re not making it.<br>This protocol bypasses resistance and forces the first 10 seconds.</p>
+        <div class="protocol-arrow">→ Start before your brain talks you out of it.</div>
+        <div class="protocol-price">$29</div>
+        <button class="btn" style="background:var(--grey);color:#666;cursor:not-allowed;">COMING SOON</button>
+      </div>
+
+      <div class="protocol">
+        <h3>FOCUS</h3>
+        <div class="protocol-state">STATE: “I KEEP DRIFTING”</div>
+        <p class="protocol-desc">You start. Then you scatter. Everything steals your attention.<br>This protocol locks you onto one target and kills the noise.</p>
+        <div class="protocol-arrow">→ Finish one thing. Like an adult.</div>
+        <div class="protocol-price">$29</div>
+        <button class="btn" style="background:var(--grey);color:#666;cursor:not-allowed;">COMING SOON</button>
+      </div>
+
+      <div class="protocol">
+        <h3>RESET</h3>
+        <div class="protocol-state">STATE: “I FEEL OFF”</div>
+        <p class="protocol-desc">Low signal. Fog. Disconnected from your own system.<br>This protocol recalibrates baseline so you can function again.</p>
+        <div class="protocol-arrow">→ Clear the static. Reboot yourself.</div>
+        <div class="protocol-price">$29</div>
+        <button class="btn" style="background:var(--grey);color:#666;cursor:not-allowed;">COMING SOON</button>
+      </div>
+
+      <div class="protocol">
+        <h3>DECIDE</h3>
+        <div class="protocol-state">STATE: “I’M STUCK BETWEEN OPTIONS”</div>
+        <p class="protocol-desc">Overthinking. Researching. Looping the same decision for days.<br>This protocol severs indecision and forces movement.</p>
+        <div class="protocol-arrow">→ Make the call. Live with it. Move.</div>
+        <div class="protocol-price">$29</div>
+        <button class="btn" style="background:var(--grey);color:#666;cursor:not-allowed;">COMING SOON</button>
+      </div>
+
+      <div class="protocol">
+        <h3>REGULATE</h3>
+        <div class="protocol-state">STATE: “I’M OVERWHELMED”</div>
+        <p class="protocol-desc">Too much input. System overload. Fight-flight-freeze.<br>This protocol down-regulates your state so you can respond, not react.</p>
+        <div class="protocol-arrow">→ Turn the volume down. Get back online.</div>
+        <div class="protocol-price">$29</div>
+        <button class="btn" style="background:var(--grey);color:#666;cursor:not-allowed;">COMING SOON</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING -->
+  <section class="section">
+    <div class="closing">
+      <h3>THE RULE</h3>
+      <p>You don’t need all six.<br>You need the one that matches your state right now.</p>
+      <strong>Pick it. Run it. Or stay stuck.<br>Control is a choice. Make it.</strong>
     </div>
   </section>
 
