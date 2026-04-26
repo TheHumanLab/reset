@@ -887,7 +887,26 @@ For when you’re stuck, overwhelmed, or avoiding what matters.
       <p class="product-sub">Stop the pattern immediately</p>
     </div>
     <div class="stack-footer">
-      <a href="https://buy.stripe.com/7sY3cwaGrct1eVFc6m3oA0b" class="buy-btn">$29 • START</a>
+     .buy-btn {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 12px 22px;
+
+  background: #111;
+  color: #fff;
+
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-decoration: none;
+
+  border: 1px solid #111;
+
+  opacity: 1;              /* 🔥 FORCE VISIBLE */
+  transform: none;         /* 🔥 REMOVE HIDDEN SHIFT */
+  visibility: visible;     /* 🔥 JUST IN CASE */
+
+  transition: all 0.2s ease;
+}
       <p class="micro">Start immediately. No thinking.</p>
     </div>
   </div>
