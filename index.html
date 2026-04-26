@@ -790,7 +790,27 @@ p {
   .explain-grid {
     grid-template-columns: 1fr;
   }
-  
+  .cta-main {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 14px 28px;
+
+  background: #111;
+  color: #fff;
+  text-decoration: none;
+
+  font-size: 13px;
+  letter-spacing: 1px;
+
+  border: 1px solid #111;
+
+  transition: all 0.2s ease;
+}
+
+.cta-main:hover {
+  background: #fff;
+  color: #111;
+}
 </style>
 </head>
 
@@ -816,8 +836,7 @@ For when you’re stuck, overwhelmed, or avoiding what matters.
 
 <a href="#products" class="cta-main">EXECUTE NOW</a>
   <div class="hero-actions">
-    <a class="btn-primary" href="execution.html">EXECUTE NOW</a>
-    <a class="btn-secondary" href="#stack">FIND YOUR TOOL</a>
+   <a href="#products" class="cta-main">EXECUTE NOW</a>
   </div>
 </section>
 <section class="system-explain">
