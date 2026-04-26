@@ -18,8 +18,11 @@
       --grey:#1A1A1A;
       --divider:#4A4646;
       --red:#E50914;
+      --rust:#B85450;
+      --yellow:#D4AF37;
+      --orange:#CC7722;
       --navy:#1E3A8A;
-      --coral:#FF6B5A;
+      --grey-accent:#808080;
     }
     *{margin:0;padding:0;box-sizing:border-box}
     html{scroll-behavior:smooth}
@@ -73,6 +76,7 @@
       letter-spacing:0.2em;
       color:var(--creme);
       font-weight:600;
+      text-shadow:0 0 12px rgba(212,175,55,0.14); /* -30% */
     }
     .header-cta{
       background:var(--white);
@@ -87,12 +91,12 @@
       cursor:pointer;
       text-decoration:none;
       border-radius:0;
-      box-shadow:0 2px 8px rgba(0,0,0,0.3);
+      box-shadow:0 2px 8px rgba(0,0,0,0.3), 0 0 20px rgba(212,175,55,0.105); /* -30% */
       transition:all 0.2s;
     }
     .header-cta:hover{
       background:var(--creme);
-      box-shadow:0 4px 12px rgba(0,0,0,0.4);
+      box-shadow:0 4px 12px rgba(0,0,0,0.4), 0 0 24px rgba(212,175,55,0.175); /* -30% */
       transform:translateY(-1px);
     }
     
@@ -119,7 +123,9 @@
       line-height:0.8;
       font-weight:400;
       margin-bottom:40px;
-      text-shadow:0 4px 24px rgba(0,0,0,0.5);
+      text-shadow:
+        0 4px 24px rgba(0,0,0,0.5),
+        0 0 40px rgba(212,175,55,0.35); /* -30% from 0.5 */
     }
     .hero-sub{
       font-size:16px;
@@ -201,7 +207,7 @@
     .step-num{
       font-family:'Bebas Neue',sans-serif;
       font-size:120px;
-      color:rgba(74,70,70,0.5);
+      color:rgba(74,70,0.5);
       line-height:0.8;
       text-shadow:0 2px 8px rgba(0,0,0,0.3);
     }
@@ -233,11 +239,12 @@
       padding:48px 40px;
       display:flex;
       flex-direction:column;
-      transition:background 0.3s;
+      transition:all 0.3s;
       position:relative;
     }
     .protocol:hover{
       background:linear-gradient(135deg, var(--bg-dark) 0%, var(--bg) 100%);
+      box-shadow:inset 0 0 0 1px rgba(212,175,55,0.105), 0 8px 32px rgba(212,175,55,0.049); /* -30% */
     }
     .protocol-state{
       font-size:11px;
@@ -296,9 +303,11 @@
     .btn-red{
       background:var(--red);
       color:var(--white);
+      box-shadow:0 2px 8px rgba(0,0,0,0.3), 0 0 20px rgba(229,9,20,0.2);
     }
     .btn-red:hover{
       background:#C40812;
+      box-shadow:0 4px 12px rgba(0,0,0,0.4), 0 0 24px rgba(229,9,20,0.3);
     }
     .accent-line{
       position:absolute;
@@ -308,11 +317,11 @@
       height:100%;
     }
     .accent-red{background:var(--red)}
-    .accent-coral{background:var(--coral)}
+    .accent-rust{background:var(--rust)}
+    .accent-yellow{background:var(--yellow)}
+    .accent-orange{background:var(--orange)}
     .accent-navy{background:var(--navy)}
-    .accent-creme{background:var(--creme)}
-    .accent-olive{background:var(--olive)}
-    .accent-grey{background:#808080}
+    .accent-grey{background:var(--grey-accent)}
     
     /* CLOSING */
     .closing{
@@ -321,7 +330,10 @@
       margin:80px 0;
       text-align:center;
       background:linear-gradient(135deg, rgba(46,44,44,0.6) 0%, rgba(64,61,61,0.3) 100%);
-      box-shadow:inset 0 1px 0 rgba(255,255,255,0.05), 0 8px 32px rgba(0,0,0,0.4);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.05), 
+        0 8px 32px rgba(0,0,0,0.4),
+        0 0 60px rgba(212,175,55,0.049); /* -30% from 0.07 */
     }
     .closing h3{
       font-family:'Bebas Neue',sans-serif;
@@ -381,7 +393,9 @@
     <div class="hero-inner">
       <h1>CONTROL IS<br>A CHOICE.</h1>
       <p class="hero-sub">Six tools. Six states. No confusion.</p>
-      <p class="hero-sub">For when you’ve opened Instagram 14 times since breakfast and hate yourself for it, or the thought you’ve run over a million times but you can’t timetravel and change what’s done.</p>
+      <p class="hero-sub">For when you’ve opened Instagram 14 times since breakfast<br>and still don’t feel better.</p>
+      <p class="hero-sub">For when you’ve replayed the same thought a hundred times<br>and nothing changes.</p>
+      <p class="hero-sub"><strong>This is where that stops.</strong></p>
       <a href="#how" class="hero-cta">HOW IT WORKS</a>
     </div>
   </section>
@@ -390,13 +404,13 @@
   <section class="section" id="how">
     <div class="section-label">HOW IT WORKS</div>
     <h2>YOU DON’T NEED A<br>PRODUCTIVITY SYSTEM.</h2>
-    <p style="font-size:20px;color:var(--creme);margin-bottom:80px;">You need a behavioural interrupt for the state you’re in right now.</p>
+    <p style="font-size:20px;color:var(--creme);margin-bottom:80px;">You need the right intervention for the state you’re in.</p>
     
     <div class="step">
       <div class="step-num">01</div>
       <div>
         <div class="step-title">IDENTIFY</div>
-        <p class="step-text"><strong>Stop scrolling. Start diagnosing.</strong><br><br>What’s running you right now?<br><strong>Stuck. Avoiding. Overthinking. Drained. Scattered. Can’t stop.</strong><br><br>Name the state. The tool selects itself.<br><strong>Clarity beats motivation. Every time.</strong></p>
+        <p class="step-text"><strong>Stop scrolling. Start diagnosing.</strong><br><br>What’s running you right now?<br><strong>Stuck. Avoiding. Overthinking. Drained. Scattered. Can’t stop.</strong><br><br>Name the state. The tool becomes obvious.<br><strong>You don’t need motivation.<br>You need accuracy.</strong></p>
       </div>
     </div>
 
@@ -404,7 +418,7 @@
       <div class="step-num">02</div>
       <div>
         <div class="step-title">SELECT</div>
-        <p class="step-text"><strong>Each state has one protocol. Not six. One.</strong><br><br>No quizzes. No “discover your type.” No guru nonsense.<br><br><strong>Feel like shit? Pick the tool that matches.</strong><br>INTERRUPT for loops. INITIATE for paralysis. FOCUS for drift.<br><br><strong>You already know which one. Stop pretending you don’t.</strong></p>
+        <p class="step-text"><strong>Each state has one protocol.<br>Not six. One.</strong><br><br>No quizzes. No personality types. No guru frameworks.<br><br><strong>You already know what’s wrong.<br>Stop pretending you don’t.</strong></p>
       </div>
     </div>
 
@@ -412,7 +426,7 @@
       <div class="step-num">03</div>
       <div>
         <div class="step-title">EXECUTE</div>
-        <p class="step-text"><strong>Run it now. Not tonight. Not “when things calm down.”</strong><br><br>No prep. No PDFs to save. No tweaking the Notion template.<br><br><strong>You’re in the loop, or you’re out. 3 seconds to decide.</strong><br>Hesitate and your brain wins. Again.</p>
+        <p class="step-text"><strong>Run it now.<br>Not tonight.<br>Not “when things calm down.”</strong><br><br>No prep. No downloads. No saving it for later.<br><br><strong>You have about 3 seconds.</strong><br>Act → you interrupt the pattern<br>Hesitate → your brain wins again</p>
       </div>
     </div>
 
@@ -420,7 +434,7 @@
       <div class="step-num">04</div>
       <div>
         <div class="step-title">SHIFT</div>
-        <p class="step-text"><strong>One action breaks the state.</strong><br><br>Not forever. Not your whole life.<br><strong>Just enough to take back control of the next 10 minutes.</strong><br><br>That’s the game.<br><strong>Intervene fast. Win small. Repeat.</strong></p>
+        <p class="step-text"><strong>One action changes the state.</strong><br><br>Not permanently.<br>Not your whole life.<br><br><strong>Just enough to take back control of the next 10 minutes.</strong><br><br>That’s how this works.<br><strong>Interrupt. Act. Repeat.</strong></p>
       </div>
     </div>
   </section>
@@ -429,45 +443,45 @@
   <section class="section" id="protocols">
     <div class="section-label">THE 6 PROTOCOLS</div>
     <h2>BEHAVIOURAL<br>CONTROL TOOLS.</h2>
-    <p style="font-size:18px;color:#999;margin-bottom:0;">Not self-help. Not content. Intervention.</p>
+    <p style="font-size:18px;color:#999;margin-bottom:0;">Not self-help.<br>Not content.<br>Intervention.</p>
     
     <div class="protocol-grid">
       <div class="protocol">
         <div class="accent-line accent-red"></div>
         <h3>INTERRUPT</h3>
         <div class="protocol-state">STATE: “I CAN’T STOP”</div>
-        <p class="protocol-desc">You’re in the loop. Scrolling. Avoiding. Repeating.<br>This protocol hijacks the pattern mid-execution and installs a controlled action.</p>
-        <div class="protocol-arrow">→ Kill the behaviour while it’s happening. Not after.</div>
+        <p class="protocol-desc">You’re in the loop. Scrolling. Avoiding. Repeating.<br>This protocol breaks the pattern while it’s happening<br>and replaces it with something you control.</p>
+        <div class="protocol-arrow">→ Stop the behaviour mid-execution</div>
         <div class="protocol-price">$29</div>
         <a href="https://buy.stripe.com/YOUR_INTERRUPT_LINK" class="btn btn-red">BUY INTERRUPT</a>
       </div>
 
       <div class="protocol">
-        <div class="accent-line accent-coral"></div>
+        <div class="accent-line accent-rust"></div>
         <h3>STABILISE</h3>
         <div class="protocol-state">STATE: “I’M OVERWHELMED”</div>
-        <p class="protocol-desc">Everything feels equally urgent. Mental noise. System pressure.<br>This protocol reduces internal load and restores accuracy.</p>
-        <div class="protocol-arrow">→ Redistribute the load. Regain clarity.</div>
+        <p class="protocol-desc">Everything feels urgent. Your head is full. Nothing moves.<br>This protocol clears the noise and restores control<br>so you can think properly again.</p>
+        <div class="protocol-arrow">→ Reduce pressure. Regain clarity</div>
         <div class="protocol-price">$49</div>
         <a href="https://buy.stripe.com/YOUR_STABILISE_LINK" class="btn">BUY STABILISE</a>
       </div>
 
       <div class="protocol">
-        <div class="accent-line accent-olive"></div>
+        <div class="accent-line accent-yellow"></div>
         <h3>DECIDE</h3>
         <div class="protocol-state">STATE: “I’M STUCK BETWEEN OPTIONS”</div>
-        <p class="protocol-desc">Overthinking. Researching. Looping the same decision for days.<br>This protocol severs indecision and forces movement.</p>
-        <div class="protocol-arrow">→ Make the call. Live with it. Move.</div>
+        <p class="protocol-desc">You’re looping the same decision. Again and again.<br>This protocol cuts through indecision<br>and forces a clear direction.</p>
+        <div class="protocol-arrow">→ Make the call. Move forward</div>
         <div class="protocol-price">$59</div>
         <a href="https://buy.stripe.com/YOUR_DECIDE_LINK" class="btn">BUY DECIDE</a>
       </div>
 
       <div class="protocol">
-        <div class="accent-line accent-creme"></div>
+        <div class="accent-line accent-orange"></div>
         <h3>FOCUS</h3>
         <div class="protocol-state">STATE: “I KEEP DRIFTING”</div>
-        <p class="protocol-desc">You start. Then you scatter. Everything steals your attention.<br>This protocol locks you onto one target and kills the noise.</p>
-        <div class="protocol-arrow">→ Finish one thing. Like an adult.</div>
+        <p class="protocol-desc">You start, then switch. Nothing holds.<br>This protocol locks your attention onto one task<br>and removes everything else.</p>
+        <div class="protocol-arrow">→ Stay on one thing long enough to finish it</div>
         <div class="protocol-price">$59</div>
         <a href="https://buy.stripe.com/YOUR_FOCUS_LINK" class="btn">BUY FOCUS</a>
       </div>
@@ -476,8 +490,8 @@
         <div class="accent-line accent-navy"></div>
         <h3>EXECUTE</h3>
         <div class="protocol-state">STATE: “I CAN’T START”</div>
-        <p class="protocol-desc">You know the move. You’re not making it.<br>This protocol bypasses resistance and forces the first 10 seconds.</p>
-        <div class="protocol-arrow">→ Start before your brain talks you out of it.</div>
+        <p class="protocol-desc">You know what to do. You’re not doing it.<br>This protocol removes resistance<br>and forces immediate action.</p>
+        <div class="protocol-arrow">→ Start before your brain talks you out of it</div>
         <div class="protocol-price">$79</div>
         <a href="https://buy.stripe.com/YOUR_EXECUTE_LINK" class="btn">BUY EXECUTE</a>
       </div>
@@ -486,8 +500,8 @@
         <div class="accent-line accent-grey"></div>
         <h3>RECLAIM</h3>
         <div class="protocol-state">STATE: “I’VE LOST CONTROL”</div>
-        <p class="protocol-desc">System collapse. Routines broken. You don’t trust your state to act.<br>This protocol resets baseline and rebuilds movement.</p>
-        <div class="protocol-arrow">→ Reset. Start again. Reclaim control.</div>
+        <p class="protocol-desc">Everything has slipped. You’re off track.<br>This protocol resets your system<br>and rebuilds control step by step.</p>
+        <div class="protocol-arrow">→ Reset. Rebuild. Regain control</div>
         <div class="protocol-price">$89</div>
         <a href="https://buy.stripe.com/YOUR_RECLAIM_LINK" class="btn">BUY RECLAIM</a>
       </div>
@@ -499,14 +513,18 @@
     <div class="closing">
       <h3>THE RULE</h3>
       <p>You don’t need all six.<br>You need the one that matches your state right now.</p>
-      <strong>Pick it. Run it. Or stay stuck.<br>Control is a choice. Make it.</strong>
+      <strong>Pick it.<br>Run it.<br>Or stay where you are.</strong>
+    </div>
+    <div style="text-align:center;margin-top:80px;">
+      <p style="font-size:32px;font-family:'Bebas Neue',sans-serif;color:var(--white);letter-spacing:-0.01em;margin-bottom:16px;">CONTROL IS A CHOICE.</p>
+      <p style="font-size:32px;font-family:'Bebas Neue',sans-serif;color:var(--creme);letter-spacing:-0.01em;">Make it.</p>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="footer">
     <p>© 2026 THE HUMAN LAB — BEHAVIOURAL CONTROL SYSTEMS</p>
-    <p style="margin-top:8px">NOT THERAPY. NOT COACHING. INTERVENTION.</p>
+    <p style="margin-top:8px">Not therapy. Not coaching.<br>Intervention.</p>
   </footer>
 
 </body>
