@@ -3,14 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>The Human Stack™</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-
-/* all your other CSS */
-
 :root {
   --black: #111;
   --cream: #f7f7f5;
@@ -36,6 +31,7 @@ h1, h2, h3 {
 p {
   color: #555;
   line-height: 1.6;
+  margin-top: 10px;
 }
 
 .micro {
@@ -59,6 +55,21 @@ p {
   padding: 18px 20px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.nav-cta {
+  padding: 10px 18px;
+  background: #111;
+  color: #fff;
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 1px;
 }
 
 /* HERO */
@@ -69,60 +80,99 @@ p {
 
 .hero h1 { font-size: 72px; }
 
-/* GRID */
-.stack-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  max-width: 1100px;
-  margin: 60px auto 0;
+.hero-actions {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
-@media (max-width: 900px) {
-  .stack-grid { grid-template-columns: repeat(2, 1fr); }
+.cta-main {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 14px 28px;
+  background: #111;
+  color: #fff;
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 1px;
+  border: 1px solid #111;
+  transition: all 0.2s ease;
 }
 
-@media (max-width: 600px) {
-  .stack-grid { grid-template-columns: 1fr; }
+.cta-main:hover {
+  background: #fff;
+  color: #111;
 }
+
+.subhead { margin-top: 20px; }
+.subhead-light { color: #777; }
+
+/* BUTTONS */
+.btn-primary {
+  background: var(--olive);
+  color: white;
+  padding: 16px 34px;
+  text-decoration: none;
+}
+
+.btn-secondary {
+  border: 1px solid var(--black);
+  padding: 16px 34px;
+  text-decoration: none;
+  color: var(--black);
+}
+
 /* SECTION */
+.section {
+  padding: 110px 20px;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.section-title {
+  font-size: 44px;
+  text-align: center;
+}
+
+.section-sub {
+  margin-top: 10px;
+  color: #666;
+  text-align: center;
+}
+
+.section-intro {
+  text-align: center;
+  color: #666;
+}
+
+/* HOW SECTION */
 .how-section {
   padding: 80px 20px;
   background: #f6f5f2;
   text-align: center;
 }
 
-.section-title {
-  font-size: 28px;
-  letter-spacing: 1px;
-  margin-bottom: 50px;
-}
-
-/* GRID */
 .how-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
-
   max-width: 1000px;
   margin: 0 auto;
 }
 
-/* CARDS */
 .how-card {
   background: #ffffff;
   padding: 40px 28px;
-
   border: 1px solid #e5e3dc;
-
   text-align: left;
-
-  box-shadow:
-    0 6px 14px rgba(0,0,0,0.04),
-    0 1px 2px rgba(0,0,0,0.03);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.03);
 }
 
-/* NUMBER */
 .how-number {
   font-size: 12px;
   letter-spacing: 2px;
@@ -130,53 +180,50 @@ p {
   margin-bottom: 10px;
 }
 
-/* TITLE */
 .how-card h3 {
   font-size: 20px;
   margin-bottom: 12px;
 }
 
-/* TEXT */
 .how-card p {
   font-size: 14px;
   line-height: 1.6;
   color: #444;
 }
 
-/* MOBILE */
-@media (max-width: 768px) {
-  .how-grid {
-    grid-template-columns: 1fr;
-  }
+/* PRODUCT GRID */
+.stack-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1100px;
+  margin: 60px auto 0;
+  border-bottom: 1px solid #e8e6e1;
+  padding-bottom: 60px;
 }
-/* PRODUCT CARD */
+
 .stack-item {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
   padding: 32px;
-  background: #fff;
+  background: #ffffff;
   border: 1px solid #e5e3dc;
-
-  box-shadow:
-    0 12px 28px rgba(0,0,0,0.06),
-    0 2px 4px rgba(0,0,0,0.04);
-
+  box-shadow: 0 12px 28px rgba(0,0,0,0.06), 0 2px 4px rgba(0,0,0,0.04);
   transition: all 0.2s ease;
 }
 
 .stack-item:hover {
   transform: translateY(-4px);
-  box-shadow:
-    0 20px 50px rgba(0,0,0,0.1);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.10), 0 4px 10px rgba(0,0,0,0.06);
 }
 
 .stack-item.featured {
   border: 2px solid #111;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.10);
+  transform: scale(1.015);
 }
 
-/* IMAGE */
 .product-img {
   width: 100%;
   height: 220px;
@@ -186,100 +233,38 @@ p {
   border-bottom: 1px solid #eee;
 }
 
-/* CONTENT */
-.stack-content { margin-top: 20px; }
-.stack-footer { margin-top: 20px; }
+.stack-content {
+  margin-top: 18px;
+  margin-bottom: auto;
+}
 
-/* BUTTON */
+.product-sub {
+  margin-top: 6px;
+}
+
+.stack-footer {
+  margin-top: 24px;
+}
+
 .buy-btn {
   display: inline-block;
-  margin-top: 18px;
-  padding: 12px 22px;
-
+  padding: 12px 20px;
+  margin-bottom: 8px;
   background: #111;
   color: #fff;
-
+  text-decoration: none;
   font-size: 13px;
   letter-spacing: 1px;
-  text-decoration: none;
-
   border: 1px solid #111;
-
-  opacity: 1;              /* 🔥 FORCE VISIBLE */
-  transform: none;         /* 🔥 REMOVE HIDDEN SHIFT */
-  visibility: visible;     /* 🔥 JUST IN CASE */
-
   transition: all 0.2s ease;
 }
 
-.buy-btn:hover { background: #000; }
-
-/* INSIDE SECTION */
-.inside-horizontal {
-  padding: 120px 20px;
-  background: #f7f6f2;
+.buy-btn:hover {
+  background: #000;
+  border-color: #000;
 }
 
-.inside-wrap {
-  max-width: 1200px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 80px;
-  align-items: center;
-}
-
-.inside-visual img {
-  width: 100%;
-}
-
-.inside-points {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px 30px;
-}
-
-.inside-points span {
-  font-size: 14px;
-  padding-left: 14px;
-  position: relative;
-}
-
-.inside-points span::before {
-  content: "";
-  width: 6px;
-  height: 6px;
-  background: #cfcac0;
-  border-radius: 50%;
-  position: absolute;
-  left: 0;
-  top: 7px;
-}
-
-/* MOBILE */
-
-@media (max-width: 768px) {
-  .inside-wrap {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .inside-content {
-    text-align: center;
-  }
-
-  .inside-points {
-    grid-template-columns: 1fr;
-  }
-
-  .inside-points span {
-    padding-left: 0;
-  }
-
-  .inside-points span::before {
-    display: none;
-  }
-}
+/* REVEAL SECTION */
 .reveal-section {
   padding: 80px 20px 40px;
   background: #f7f6f2;
@@ -327,346 +312,47 @@ p {
   line-height: 1.6;
 }
 
-/* MOBILE */
-@media (max-width: 768px) {
-  .reveal-grid {
-    grid-template-columns: 1fr;
-  }
-}
-  /* MOBILE FIX */
-@media (max-width: 768px) {
-  .explain-grid {
-    grid-template-columns: 1fr;
-  }
-}
-<style>
-
-/* your existing CSS above */
-
-/* --- PRODUCT GRID FIX (ADD HERE) --- */
-/* PRODUCT GRID — CLEAN FINAL */
-
-.stack-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  max-width: 1100px;
-  margin: 60px auto 0;
+/* INSIDE SECTION */
+.inside-horizontal {
+  padding: 120px 20px;
+  background: #f7f6f2;
 }
 
-@media (max-width: 900px) {
-  .stack-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .stack-grid {
-    grid-template-columns: 1fr;
-  }
-.stack-item {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  padding: 32px;
-  background: #ffffff;
-  border: 1px solid #e5e3dc;
-
-  /* permanent depth */
-  box-shadow:
-    0 12px 28px rgba(0,0,0,0.06),
-    0 2px 4px rgba(0,0,0,0.04);
-
-  transition: all 0.2s ease;
-}
-
-/* hover = sharper, not floaty */
-.stack-item:hover {
-  transform: translateY(-4px);
-  box-shadow:
-    0 20px 50px rgba(0,0,0,0.10),
-    0 4px 10px rgba(0,0,0,0.06);
-}
-
-/* internal structure */
-.stack-content {
-  margin-top: 18px;
-  margin-bottom: auto;
-}
-
-.stack-footer {
-  margin-top: 24px;
-}
-
-.product-sub {
-  margin-top: 6px;
-}
-
-/* FEATURED = real authority, not subtle */
-.stack-item.featured {
-  border: 2px solid #111;
-  box-shadow:
-    0 18px 40px rgba(0,0,0,0.10);
-  transform: scale(1.015);
-}
-<style>
-
-/* VARIABLES */
-:root {
-  --black: #111;
-  --cream: #f7f7f5;
-  --olive: #6b705c;
-}
-
-/* RESET */
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: var(--cream);
-  color: var(--black);
-}
-
-/* TYPO */
-h1, h2, h3 {
-  font-family: 'Bebas Neue', sans-serif;
-  letter-spacing: 1px;
-  margin: 0;
-}
-
-p {
-  color: #555;
-  margin-top: 10px;
-  line-height: 1.6;
-}
-
-.micro {
-  margin-top: 14px;
-  font-size: 12px;
-  color: #777;
-  letter-spacing: 0.5px;
-}
-
-/* NAV */
-.topbar {
-  position: fixed;
-  width: 100%;
-  background: var(--cream);
-  border-bottom: 1px solid #ddd;
-  z-index: 1000;
-}
-
-.topbar-inner {
-  max-width: 1100px;
+.inside-wrap {
+  max-width: 1200px;
   margin: auto;
-  padding: 18px 20px;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 80px;
   align-items: center;
 }
 
-.logo {
-  font-size: 12px;
-  letter-spacing: 2px;
-}
-
-.nav-cta {
-  padding: 10px 18px;
-  background: #111;
-  color: #fff;
-  text-decoration: none;
-  font-size: 12px;
-  letter-spacing: 1px;
-}
-}
-
-/* HERO */
-.hero {
-  padding: 140px 20px 110px;
-  text-align: center;
-}
-
-.hero h1 {
-  font-size: 78px;
-}
-
-.hero p {
-  margin-top: 20px;
-}
-
-.hero-actions {
-  margin-top: 40px;
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-/* BUTTONS */
-.btn-primary {
-  background: var(--olive);
-  color: white;
-  padding: 16px 34px;
-  text-decoration: none;
-}
-
-.btn-secondary {
-  border: 1px solid var(--black);
-  padding: 16px 34px;
-  text-decoration: none;
-  color: var(--black);
-}
-.stack-content {
-  margin-top: 18px;
-  margin-bottom: auto;
-}
-
-.stack-footer {
-  margin-top: 20px;
-}
-
-.buy-btn {
-  display: inline-block;
-  padding: 12px 20px;
-  margin-bottom: 8px;
-
-  background: #111;
-  color: #fff;
-
-  text-decoration: none;
-  font-size: 13px;
-  letter-spacing: 1px;
-
-  border: 1px solid #111;
-
-  transition: all 0.2s ease;
-}
-
-.buy-btn:hover {
-  background: #000;
-  border-color: #000;
-}
-/* MOBILE FIX */
-@media (max-width: 600px) {
-  .hero-actions {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .btn-primary,
-  .btn-secondary {
-    width: 90%;
-    text-align: center;
-  }
-}
-
-/* SECTION */
-.section {
-  padding: 110px 20px;
-}
-
-.container {
-  max-width: 1100px;
-  margin: auto;
-}
-
-.section-title {
-  font-size: 44px;
-}
-
-.section-sub {
-  margin-top: 10px;
-  color: #666;
-}
-
-/* GRID */
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  align-items: stretch;
-}
-
-@media (max-width: 900px) {
-  .stack-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 500px) {
-  .stack-grid {
-    grid-template-columns: 1fr;
-  }
-}
-.stack-grid {
-  border-bottom: 1px solid #e8e6e1;
-  padding-bottom: 60px;
-}
-</section>
-  
-/* CARD */
-}
-.stack-item {
-  background: #ffffff;
-  border: 1px solid #e8e6e1;
-  transition: all 0.25s ease;
-}
-.product-card {
-  background: #ffffff;
-  border: 1px solid #e8e8e8;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-  transform: translateY(0);
-  transition: all 0.25s ease;
-}
-.product-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 30px 60px rgba(0,0,0,0.12);
-  border-color: #dcdcdc;
-}
-  /* Highlight EXECUTE */
-.stack-item:nth-child(5) {
-  border: 2px solid var(--olive);
-}
-.product-img {
+.inside-visual img {
   width: 100%;
-  height: 220px;
-  object-fit: contain;
-  background: #f7f6f2; /* soft neutral, not beige */
-  padding: 30px;
-  border-bottom: 1px solid #eee;
-}
-.product-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-}
-/* CONTENT */
-.stack-item h3 {
-  padding: 20px 20px 0;
 }
 
-.stack-item p {
-  padding: 0 20px;
+.inside-points {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 30px;
+  margin-top: 20px;
 }
 
-.buy-btn {
-  display: inline-block;
-  margin: 20px;
-  padding: 14px 26px;
-  border: 1px solid var(--black);
-  text-decoration: none;
-  color: var(--black);
-  font-size: 12px;
+.inside-points span {
+  font-size: 14px;
+  padding-left: 14px;
+  position: relative;
 }
 
-.buy-btn:hover {
-  background: var(--black);
-  color: white;
+.inside-points span::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: #cfcac0;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 7px;
 }
 
 /* TESTIMONIALS */
@@ -704,152 +390,52 @@ p {
   color: #777;
 }
 
-@media (max-width: 900px) {
-  .testimonial-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 /* CTA */
 .cta {
   text-align: center;
   padding: 100px 20px;
 }
 
-.cta a {
-  background: var(--olive);
-  color: white;
-  padding: 18px 60px;
+.final-contact a {
+  color: var(--olive);
   text-decoration: none;
 }
-.system-explain {
-  background: #ffffff;
-  padding: 90px 20px 70px;
-  border-top: 1px solid #e8e6e1;
-  border-bottom: 1px solid #e8e6e1;
-}
-.explain-grid {
-  position: relative;
-}
 
-.explain-grid::before,
-.explain-grid::after {
-  content: "";
-  position: absolute;
-  top: 20px;
-  bottom: 20px;
-  width: 1px;
-  background: #eceae4;
+/* MOBILE */
+@media (max-width: 900px) {
+  .stack-grid { grid-template-columns: repeat(2, 1fr); }
+  .testimonial-grid { grid-template-columns: 1fr; }
 }
-
-.explain-grid::before { left: 33.33%; }
-.explain-grid::after { left: 66.66%; }
 
 @media (max-width: 768px) {
-  .explain-grid::before,
-  .explain-grid::after {
-    display: none;
-  }
-.system-explain h2 {
-  text-align: center;
-  font-size: 28px;
-  margin-bottom: 50px;
-}
-
-.explain-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.explain-item {
-  text-align: center;
-}
-
-.explain-item h4 {
-  margin-bottom: 10px;
-  font-size: 16px;
-  letter-spacing: 1px;
-}
-
-.explain-item p {
-  font-size: 14px;
-  color: #555;
-  line-height: 1.6;
-}
-.explain-item {
-  background: #ffffff;
-  padding: 32px 28px;
-
-  border: 1px solid #e5e3dc;
-
-  box-shadow:
-    0 8px 18px rgba(0,0,0,0.04),
-    0 1px 2px rgba(0,0,0,0.03);
-
-  text-align: center;
-}
-
-/* hover = tighter, not playful */
-.explain-item:hover {
-  transform: translateY(-2px);
-  box-shadow:
-    0 14px 30px rgba(0,0,0,0.06);
-}
-@media (max-width: 768px) {
-  .explain-grid {
+  .how-grid { grid-template-columns: 1fr; }
+  .reveal-grid { grid-template-columns: 1fr; }
+  .inside-wrap {
     grid-template-columns: 1fr;
+    gap: 40px;
   }
-  .cta-main {
-  display: inline-block;
-  margin-top: 30px;
-  padding: 14px 28px;
-
-  background: #111;
-  color: #fff;
-  text-decoration: none;
-
-  font-size: 13px;
-  letter-spacing: 1px;
-
-  border: 1px solid #111;
-
-  transition: all 0.2s ease;
+  .inside-content { text-align: center; }
+  .inside-points { grid-template-columns: 1fr; }
+  .inside-points span { padding-left: 0; }
+  .inside-points span::before { display: none; }
 }
 
-.cta-main:hover {
-  background: #fff;
-  color: #111;
-}
-  .cta-main {
-  display: inline-block;
-  margin-top: 30px;
-  padding: 14px 28px;
-
-  background: #111;
-  color: #fff !important;
-  text-decoration: none !important;
-
-  font-size: 13px;
-  letter-spacing: 1px;
-
-  border: 1px solid #111;
-
-  transition: all 0.2s ease;
-}
-
-.cta-main:hover {
-  background: #fff;
-  color: #111 !important;
+@media (max-width: 600px) {
+  .hero h1 { font-size: 48px; }
+  .stack-grid { grid-template-columns: 1fr; }
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  .btn-primary, .btn-secondary {
+    width: 90%;
+    text-align: center;
+  }
 }
 </style>
 </head>
 
 <body>
-
 <header class="topbar">
   <div class="topbar-inner">
     <div class="logo">THE HUMAN STACK™</div>
@@ -859,88 +445,52 @@ p {
 
 <section class="hero">
  <h1>CONTROL IS A CHOICE.</h1>
-
-<p class="subhead">
-Six tools. Six states. No confusion.
-</p>
-
-<p class="subhead-light">
-For when you’re stuck, overwhelmed, or avoiding what matters.
-</p>
-
+<p class="subhead">Six tools. Six states. No confusion.</p>
+<p class="subhead-light">For when you’re stuck, overwhelmed, or avoiding what matters.</p>
+<a href="#stack" class="cta-main">EXECUTE NOW</a>
 </section>
-<section class="system-explain">
-  <div class="container">
-    
-    <section class="how-section">
+
+<section class="how-section">
   <h2 class="section-title">HOW THIS WORKS</h2>
-
   <div class="how-grid">
-
     <div class="how-card">
       <div class="how-number">01</div>
       <h3>Identify</h3>
       <p>You don’t browse. You recognise.<br>The state you're in becomes obvious.</p>
     </div>
-
     <div class="how-card">
       <div class="how-number">02</div>
       <h3>Interrupt</h3>
       <p>Each tool shifts your state immediately.<br>No buildup. No delay.</p>
     </div>
-
     <div class="how-card">
       <div class="how-number">03</div>
       <h3>Execute</h3>
       <p>You act from clarity, not pressure.<br>That’s the difference.</p>
     </div>
-
   </div>
 </section>
-    </div>
 
-  </div>
-</section>
 <section class="section" id="stack">
   <div class="container">
     <h2 class="section-title">WHAT’S HAPPENING RIGHT NOW?</h2>
     <p class="section-sub">Choose the one that feels uncomfortably accurate.</p>
 
    <div class="stack-grid">
-
   <div class="stack-item">
-    <img src="images/interrupt.jpg" class="product-img">
+    <img src="images/interrupt.jpg" class="product-img" alt="INTERRUPT">
     <div class="stack-content">
       <h3>INTERRUPT</h3>
       <p class="product-sub">Stop the pattern immediately</p>
     </div>
     <div class="stack-footer">
-     .buy-btn {
-  display: inline-block;
-  margin-top: 18px;
-  padding: 12px 22px;
-
-  background: #111;
-  color: #fff;
-
-  font-size: 13px;
-  letter-spacing: 1px;
-  text-decoration: none;
-
-  border: 1px solid #111;
-
-  opacity: 1;              /* 🔥 FORCE VISIBLE */
-  transform: none;         /* 🔥 REMOVE HIDDEN SHIFT */
-  visibility: visible;     /* 🔥 JUST IN CASE */
-
-  transition: all 0.2s ease;
-}
+      <a href="https://buy.stripe.com/7sY3cwaGrct1eVFc6m3oA0b" class="buy-btn">$29 • START</a>
       <p class="micro">Start immediately. No thinking.</p>
     </div>
   </div>
 
   <div class="stack-item">
-    <img src="images/stabilise.jpg" class="product-img">
+    <img src="images/stabilise.jpg" class="product-img" alt="STABILISE">
     <div class="stack-content">
       <h3>STABILISE</h3>
       <p class="product-sub">Regain control in minutes</p>
@@ -952,7 +502,7 @@ For when you’re stuck, overwhelmed, or avoiding what matters.
   </div>
 
   <div class="stack-item">
-    <img src="images/decide.jpg" class="product-img">
+    <img src="images/decide.jpg" class="product-img" alt="DECIDE">
     <div class="stack-content">
       <h3>DECIDE</h3>
       <p class="product-sub">You already know what to do</p>
@@ -964,7 +514,7 @@ For when you’re stuck, overwhelmed, or avoiding what matters.
   </div>
 
   <div class="stack-item">
-    <img src="images/focus.jpg" class="product-img">
+    <img src="images/focus.jpg" class="product-img" alt="FOCUS">
     <div class="stack-content">
       <h3>FOCUS</h3>
       <p class="product-sub">Lock onto one task. Finish it.</p>
@@ -976,7 +526,7 @@ For when you’re stuck, overwhelmed, or avoiding what matters.
   </div>
 
   <div class="stack-item featured">
-    <img src="images/execute.jpg" class="product-img">
+    <img src="images/execute.jpg" class="product-img" alt="EXECUTE">
     <div class="stack-content">
       <h3>EXECUTE</h3>
       <p class="product-sub">Start immediately. No delay.</p>
@@ -988,7 +538,7 @@ For when you’re stuck, overwhelmed, or avoiding what matters.
   </div>
 
   <div class="stack-item">
-    <img src="images/reclaim.jpg" class="product-img">
+    <img src="images/reclaim.jpg" class="product-img" alt="RECLAIM">
     <div class="stack-content">
       <h3>RECLAIM</h3>
       <p class="product-sub">Take it back. Fully.</p>
@@ -1001,58 +551,42 @@ For when you’re stuck, overwhelmed, or avoiding what matters.
     </div>
   </div>
 </section>
+
 <section class="reveal-section">
-
   <h2>OPEN THE SYSTEM</h2>
-  <p class="section-intro">
-  This isn’t a box you read. It’s a system you enter.
-  </p>
-
+  <p class="section-intro">This isn’t a box you read. It’s a system you enter.</p>
   <div class="reveal-grid">
-
     <div class="reveal-item">
       <span>01</span>
       <h4>You open it</h4>
       <p>No clutter. No noise. Just the system in front of you.</p>
     </div>
-
     <div class="reveal-item">
       <span>02</span>
       <h4>You recognise the state</h4>
       <p>It becomes obvious where you are—and what to do next.</p>
     </div>
-
     <div class="reveal-item">
       <span>03</span>
       <h4>You act immediately</h4>
       <p>No thinking. The system moves you.</p>
     </div>
-
     <div class="reveal-item">
       <span>04</span>
       <h4>You reset</h4>
       <p>You don’t spiral. You regain control.</p>
     </div>
+  </div>
+</section>
 
-  </section>
 <section class="inside-horizontal">
-
   <div class="inside-wrap">
-
-    <!-- LEFT: IMAGE -->
     <div class="inside-visual">
- <img src="images/human-stack-dark.jpg" alt="The Human Stack System">
+      <img src="images/human-stack-dark.jpg" alt="The Human Stack System">
     </div>
-
-    <!-- RIGHT: CONTENT -->
     <div class="inside-content">
-
       <h2>WHAT’S INSIDE THE BOX</h2>
-
-      <p class="inside-sub">
-        A physical system designed to move you from state → action.
-      </p>
-
+      <p class="inside-sub">A physical system designed to move you from state → action.</p>
       <div class="inside-points">
         <span>Clear protocol</span>
         <span>Immediate direction</span>
@@ -1061,44 +595,36 @@ For when you’re stuck, overwhelmed, or avoiding what matters.
         <span>Reinforcement layer</span>
         <span>Built-in follow-through</span>
       </div>
-
+    </div>
   </div>
-
 </section>
 
-  </div>
 <section class="testimonials">
   <div class="container">
     <h2 class="section-title">WHAT HAPPENS WHEN YOU USE IT</h2>
-<p class="section-intro">
-Used daily by people who don’t have time to drift.
-</p>
+    <p class="section-intro">Used daily by people who don’t have time to drift.</p>
     <div class="testimonial-grid">
-
       <div class="testimonial">
         <p class="quote">“CONTROL IS A CHOICE isn’t a slogan. It actually worked.”</p>
         <p class="author">Jordan M. — SaaS Founder</p>
       </div>
-
       <div class="testimonial">
         <p class="quote">“I don’t need more time. I need to be more me.”</p>
         <p class="author">Aisha K. — Teacher & Mum</p>
       </div>
-
       <div class="testimonial">
         <p class="quote">“This is implementation. Best ROI I’ve seen.”</p>
         <p class="author">Marcus T. — Consultant</p>
       </div>
-
     </div>
   </div>
 </section>
 
 <section class="cta">
   <div class="final-contact">
-  <p>Questions before you start?</p>
-  <a href="mailto:hello@humanlabofficial.com">hello@humanlabofficial.com</a>
-</div>
+    <p>Questions before you start?</p>
+    <a href="mailto:hello@humanlabofficial.com">hello@humanlabofficial.com</a>
+  </div>
 </section>
 
 </body>
