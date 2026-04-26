@@ -1,636 +1,331 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Human Stack™</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-:root {
-  --black: #111;
-  --cream: #f7f7f5;
-  --olive: #6b705c;
-}
-
-* { box-sizing: border-box; }
-
-body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: var(--cream);
-  color: var(--black);
-}
-
-/* TYPE */
-h1, h2, h3 {
-  font-family: 'Bebas Neue', sans-serif;
-  letter-spacing: 1px;
-  margin: 0;
-}
-
-p {
-  color: #555;
-  line-height: 1.6;
-  margin-top: 10px;
-}
-
-.micro {
-  font-size: 12px;
-  color: #777;
-  margin-top: 10px;
-}
-
-/* NAV */
-.topbar {
-  position: fixed;
-  width: 100%;
-  background: var(--cream);
-  border-bottom: 1px solid #ddd;
-  z-index: 1000;
-}
-
-.topbar-inner {
-  max-width: 1100px;
-  margin: auto;
-  padding: 18px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  font-size: 12px;
-  letter-spacing: 2px;
-}
-
-.nav-cta {
-  padding: 10px 18px;
-  background: #111;
-  color: #fff;
-  text-decoration: none;
-  font-size: 12px;
-  letter-spacing: 1px;
-}
-
-/* HERO */
-.hero {
-  padding: 120px 20px 110px;
-  text-align: center;
-}
-
-.hero h1 { 
-  font-size: clamp(60px, 15vw, 200px); /* scales with screen width */
-  line-height: 0.9;
-  letter-spacing: -0.02em; /* tighter = more impact */
-  font-weight: 400;
-  max-width: 100%;
-  margin: 0 auto;
-}
-
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: clamp(48px, 18vw, 120px);
-    letter-spacing: -0.01em;
-}
-
-.cta-main {
-  display: inline-block;
-  margin-top: 30px;
-  padding: 14px 28px;
-  background: #111;
-  color: #fff;
-  text-decoration: none;
-  font-size: 13px;
-  letter-spacing: 1px;
-  border: 1px solid #111;
-  transition: all 0.2s ease;
-}
-
-.cta-main:hover {
-  background: #fff;
-  color: #111;
-}
-
-.subhead { margin-top: 20px; }
-.subhead-light { color: #777; }
-
-/* BUTTONS */
-.btn-primary {
-  background: var(--olive);
-  color: white;
-  padding: 16px 34px;
-  text-decoration: none;
-}
-
-.btn-secondary {
-  border: 1px solid var(--black);
-  padding: 16px 34px;
-  text-decoration: none;
-  color: var(--black);
-}
-
-/* SECTION */
-.section {
-  padding: 110px 20px;
-}
-
-.container {
-  max-width: 1100px;
-  margin: auto;
-}
-
-.section-title {
-  font-size: 44px;
-  text-align: center;
-}
-
-.section-sub {
-  margin-top: 10px;
-  color: #666;
-  text-align: center;
-}
-
-.section-intro {
-  text-align: center;
-  color: #666;
-}
-
-/* HOW SECTION */
-.how-section {
-  padding: 80px 20px;
-  background: #f6f5f2;
-  text-align: center;
-}
-
-.how-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.how-card {
-  background: #ffffff;
-  padding: 40px 28px;
-  border: 1px solid #e5e3dc;
-  text-align: left;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.03);
-}
-
-.how-number {
-  font-size: 12px;
-  letter-spacing: 2px;
-  color: #999;
-  margin-bottom: 10px;
-}
-
-.how-card h3 {
-  font-size: 20px;
-  margin-bottom: 12px;
-}
-
-.how-card p {
-  font-size: 14px;
-  line-height: 1.6;
-  color: #444;
-}
-
-/* PRODUCT GRID */
-.stack-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  max-width: 1100px;
-  margin: 60px auto 0;
-  border-bottom: 1px solid #e8e6e1;
-  padding-bottom: 60px;
-}
-
-.stack-item {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 32px;
-  background: #ffffff;
-  border: 1px solid #e5e3dc;
-  box-shadow: 0 12px 28px rgba(0,0,0,0.06), 0 2px 4px rgba(0,0,0,0.04);
-  transition: all 0.2s ease;
-}
-
-.stack-item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.10), 0 4px 10px rgba(0,0,0,0.06);
-}
-
-.stack-item.featured {
-  border: 2px solid #111;
-  box-shadow: 0 18px 40px rgba(0,0,0,0.10);
-  transform: scale(1.015);
-}
-
-.product-img {
-  width: 100%;
-  height: 220px;
-  object-fit: contain;
-  background: #f7f6f2;
-  padding: 30px;
-  border-bottom: 1px solid #eee;
-}
-
-.stack-content {
-  margin-top: 18px;
-  margin-bottom: auto;
-}
-
-.product-sub {
-  margin-top: 6px;
-}
-
-.stack-footer {
-  margin-top: 24px;
-}
-
-.buy-btn {
-  display: inline-block;
-  padding: 12px 20px;
-  margin-bottom: 8px;
-  background: #111;
-  color: #fff;
-  text-decoration: none;
-  font-size: 13px;
-  letter-spacing: 1px;
-  border: 1px solid #111;
-  transition: all 0.2s ease;
-}
-
-.buy-btn:hover {
-  background: #000;
-  border-color: #000;
-}
-
-/* REVEAL SECTION */
-.reveal-section {
-  padding: 80px 20px 40px;
-  background: #f7f6f2;
-  text-align: center;
-}
-
-.reveal-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
-  max-width: 1000px;
-  margin: 60px auto 0;
-}
-
-.reveal-item {
-  background: #fff;
-  padding: 30px;
-  border: 1px solid #e8e6e1;
-  text-align: left;
-  transition: all 0.2s ease;
-}
-
-.reveal-item:hover {
-  transform: translateY(-4px);
-  border-color: #cfcac0;
-}
-
-.reveal-item span {
-  font-size: 12px;
-  letter-spacing: 2px;
-  color: #999;
-  display: block;
-  margin-bottom: 10px;
-}
-
-.reveal-item h4 {
-  margin-bottom: 10px;
-  font-size: 14px;
-  letter-spacing: 1px;
-}
-
-.reveal-item p {
-  font-size: 14px;
-  color: #444;
-  line-height: 1.6;
-}
-
-/* INSIDE SECTION */
-.inside-horizontal {
-  padding: 120px 20px;
-  background: #f7f6f2;
-}
-
-.inside-wrap {
-  max-width: 1200px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 80px;
-  align-items: center;
-}
-
-.inside-visual img {
-  width: 100%;
-}
-
-.inside-points {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px 30px;
-  margin-top: 20px;
-}
-
-.inside-points span {
-  font-size: 14px;
-  padding-left: 14px;
-  position: relative;
-}
-
-.inside-points span::before {
-  content: "";
-  width: 6px;
-  height: 6px;
-  background: #cfcac0;
-  border-radius: 50%;
-  position: absolute;
-  left: 0;
-  top: 7px;
-}
-
-/* TESTIMONIALS */
-.testimonials {
-  padding: 110px 20px;
-}
-
-.testimonial-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  margin-top: 40px;
-}
-
-.testimonial {
-  background: #fff;
-  padding: 30px;
-  border-radius: 6px;
-  border: 1px solid #ddd;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.05);
-  transition: 0.3s;
-}
-
-.testimonial:hover {
-  transform: translateY(-4px);
-}
-
-.quote {
-  font-size: 14px;
-}
-
-.author {
-  margin-top: 20px;
-  font-size: 12px;
-  color: #777;
-}
-
-/* CTA */
-.cta {
-  text-align: center;
-  padding: 100px 20px;
-}
-
-.final-contact a {
-  color: var(--olive);
-  text-decoration: none;
-}
-
-/* MOBILE */
-@media (max-width: 900px) {
-  .stack-grid { grid-template-columns: repeat(2, 1fr); }
-  .testimonial-grid { grid-template-columns: 1fr; }
-}
-
-@media (max-width: 768px) {
-  .how-grid { grid-template-columns: 1fr; }
-  .reveal-grid { grid-template-columns: 1fr; }
-  .inside-wrap {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-  .inside-content { text-align: center; }
-  .inside-points { grid-template-columns: 1fr; }
-  .inside-points span { padding-left: 0; }
-  .inside-points span::before { display: none; }
-}
-
-@media (max-width: 600px) {
-  .hero h1 { font-size: 48px; }
-  .stack-grid { grid-template-columns: 1fr; }
-  .hero-actions {
-    flex-direction: column;
-    align-items: center;
-  }
-  .btn-primary, .btn-secondary {
-    width: 90%;
-    text-align: center;
-  }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THE HUMAN STACK™ — Behavioural Control Systems</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --black:#000000; 
+      --white:#F5F5F5; 
+      --red:#E50914; 
+      --grey:#1A1A1A;
+      --divider:#222222;
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      background:var(--black);
+      color:var(--white);
+      font-family:'Inter',sans-serif;
+      font-size:16px;
+      line-height:1.5;
+      -webkit-font-smoothing:antialiased;
+    }
+    
+    /* HEADER */
+    .header{
+      position:fixed;
+      top:0;
+      left:0;
+      right:0;
+      background:var(--black);
+      border-bottom:1px solid var(--divider);
+      z-index:100;
+    }
+    .header-inner{
+      max-width:1400px;
+      margin:0 auto;
+      padding:24px 32px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    .logo{
+      font-size:11px;
+      text-transform:uppercase;
+      letter-spacing:0.2em;
+      color:var(--white);
+      font-weight:600;
+    }
+    .header-cta{
+      background:var(--red);
+      color:var(--white);
+      border:none;
+      padding:12px 24px;
+      font-family:'Inter',sans-serif;
+      font-size:11px;
+      text-transform:uppercase;
+      letter-spacing:0.2em;
+      font-weight:700;
+      cursor:pointer;
+      text-decoration:none;
+      border-radius:0;
+    }
+    
+    /* HERO - CONTROL IS A CHOICE */
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:120px 32px 80px 32px;
+      text-align:left;
+    }
+    .hero-inner{
+      max-width:1400px;
+      width:100%;
+    }
+    h1{
+      font-family:'Bebas Neue',sans-serif;
+      font-size:clamp(80px,18vw,280px);
+      color:var(--white);
+      letter-spacing:-0.03em;
+      line-height:0.8;
+      font-weight:400;
+      margin-bottom:40px;
+    }
+    .hero-sub{
+      font-size:16px;
+      line-height:1.6;
+      max-width:480px;
+      margin-bottom:16px;
+      color:#999;
+    }
+    .hero-cta{
+      background:transparent;
+      color:var(--red);
+      border:none;
+      padding:0;
+      font-family:'Inter',sans-serif;
+      font-size:13px;
+      text-transform:uppercase;
+      letter-spacing:0.2em;
+      font-weight:700;
+      cursor:pointer;
+      text-decoration:none;
+      display:inline-block;
+      margin-top:32px;
+      border-bottom:1px solid var(--red);
+      padding-bottom:4px;
+    }
+    .hero-cta:hover{opacity:0.7}
+    
+    /* SECTIONS */
+    .section{
+      padding:120px 32px;
+      border-top:1px solid var(--divider);
+      max-width:1400px;
+      margin:0 auto;
+    }
+    .section-label{
+      font-size:11px;
+      text-transform:uppercase;
+      letter-spacing:0.2em;
+      color:var(--red);
+      font-weight:700;
+      margin-bottom:24px;
+    }
+    h2{
+      font-family:'Bebas Neue',sans-serif;
+      font-size:clamp(64px,10vw,140px);
+      color:var(--white);
+      letter-spacing:-0.02em;
+      line-height:0.9;
+      font-weight:400;
+      margin-bottom:32px;
+    }
+    h3{
+      font-family:'Bebas Neue',sans-serif;
+      font-size:48px;
+      color:var(--white);
+      letter-spacing:-0.01em;
+      line-height:0.9;
+      font-weight:400;
+      margin-bottom:12px;
+    }
+    
+    /* PRODUCT */
+    .product{
+      border:1px solid var(--divider);
+      padding:48px;
+      margin-top:48px;
+      max-width:600px;
+    }
+    .product-state{
+      font-size:11px;
+      text-transform:uppercase;
+      letter-spacing:0.15em;
+      color:#666;
+      margin-bottom:24px;
+    }
+    .product-desc{
+      font-size:16px;
+      line-height:1.7;
+      margin-bottom:32px;
+      color:#CCC;
+    }
+    .product-price{
+      font-family:'Bebas Neue',sans-serif;
+      font-size:80px;
+      color:var(--white);
+      letter-spacing:-0.02em;
+      line-height:1;
+      margin-bottom:32px;
+    }
+    .product ul{
+      list-style:none;
+      padding:0;
+      margin-bottom:40px;
+    }
+    .product li{
+      font-size:14px;
+      margin-bottom:12px;
+      padding-left:16px;
+      position:relative;
+      color:#999;
+    }
+    .product li:before{
+      content:'—';
+      position:absolute;
+      left:0;
+      color:var(--red);
+    }
+    .btn{
+      background:var(--red);
+      color:var(--white);
+      border:none;
+      padding:20px 48px;
+      font-family:'Inter',sans-serif;
+      font-size:12px;
+      cursor:pointer;
+      width:100%;
+      text-transform:uppercase;
+      letter-spacing:0.2em;
+      font-weight:700;
+      text-decoration:none;
+      display:block;
+      text-align:center;
+      border-radius:0;
+    }
+    
+    /* HOW IT WORKS */
+    .step{
+      padding:64px 0;
+      border-bottom:1px solid var(--divider);
+    }
+    .step:last-child{border-bottom:none}
+    .step-num{
+      font-family:'Bebas Neue',sans-serif;
+      font-size:80px;
+      color:var(--divider);
+      line-height:1;
+      margin-bottom:16px;
+    }
+    .step-title{
+      font-family:'Bebas Neue',sans-serif;
+      font-size:40px;
+      color:var(--white);
+      letter-spacing:-0.01em;
+      margin-bottom:16px;
+    }
+    .step-text{
+      font-size:16px;
+      color:#999;
+      max-width:500px;
+    }
+    
+    /* FOOTER */
+    .footer{
+      padding:80px 32px 48px 32px;
+      max-width:1400px;
+      margin:0 auto;
+      font-size:11px;
+      color:#666;
+      text-transform:uppercase;
+      letter-spacing:0.1em;
+      border-top:1px solid var(--divider);
+    }
+    
+    @media(max-width:768px){
+      .header-inner{padding:20px 24px}
+      .hero{padding:100px 24px 60px 24px;min-height:90vh}
+      h1{margin-bottom:32px}
+      .section{padding:80px 24px}
+      .product{padding:40px 32px}
+      .step{padding:48px 0}
+    }
+  </style>
 </head>
-
 <body>
-<header class="topbar">
-  <div class="topbar-inner">
-    <div class="logo">THE HUMAN STACK™</div>
-    <a href="execution.html" class="nav-cta">EXECUTE</a>
-  </div>
-</header>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo">THE HUMAN STACK™</div>
+      <a href="#interrupt" class="header-cta">EXECUTE</a>
+    </div>
+  </header>
 
-<section class="hero">
- <h1>CONTROL IS A CHOICE.</h1>
-<p class="subhead">Six tools. Six states. No confusion.</p>
-<p class="subhead-light">For when you’re stuck, overwhelmed, or avoiding what matters.</p>
-<a href="#stack" class="cta-main">EXECUTE NOW</a>
-</section>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <h1>CONTROL IS<br>A CHOICE.</h1>
+      <p class="hero-sub">Six tools. Six states. No confusion.</p>
+      <p class="hero-sub">For when you're stuck, overwhelmed, or avoiding what matters.</p>
+      <a href="#interrupt" class="hero-cta">EXECUTE NOW</a>
+    </div>
+  </section>
 
-<section class="how-section">
-  <h2 class="section-title">HOW THIS WORKS</h2>
-  <div class="how-grid">
-    <div class="how-card">
-      <div class="how-number">01</div>
-      <h3>Identify</h3>
-      <p>You don’t browse. You recognise.<br>The state you're in becomes obvious.</p>
+  <!-- INTERRUPT -->
+  <section class="section" id="interrupt">
+    <div class="section-label">PROTOCOL 01</div>
+    <h2>INTERRUPT</h2>
+    <div class="product">
+      <div class="product-state">STATE: I CAN'T STOP</div>
+      <p class="product-desc">A short, structured session to identify the pattern, break it once in real time, replace it with a new action, and lock that action in. This is not about thinking. It's about doing something different, immediately.</p>
+      <div class="product-price">$29</div>
+      <ul>
+        <li>Live digital protocol</li>
+        <li>Immediate access after payment</li>
+        <li>Loop identification + deconstruction</li>
+        <li>3-second execution rule</li>
+        <li>Locked protocol delivered in 12hrs</li>
+      </ul>
+      <a href="https://buy.stripe.com/YOUR_INTERRUPT_LINK" class="btn">BUY INTERRUPT — $29</a>
     </div>
-    <div class="how-card">
-      <div class="how-number">02</div>
-      <h3>Interrupt</h3>
-      <p>Each tool shifts your state immediately.<br>No buildup. No delay.</p>
-    </div>
-    <div class="how-card">
-      <div class="how-number">03</div>
-      <h3>Execute</h3>
-      <p>You act from clarity, not pressure.<br>That’s the difference.</p>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section class="section" id="stack">
-  <div class="container">
-    <h2 class="section-title">WHAT’S HAPPENING RIGHT NOW?</h2>
-    <p class="section-sub">Choose the one that feels uncomfortably accurate.</p>
+  <!-- HOW THIS WORKS -->
+  <section class="section">
+    <div class="section-label">HOW THIS WORKS</div>
+    
+    <div class="step">
+      <div class="step-num">01</div>
+      <div class="step-title">IDENTIFY</div>
+      <p class="step-text">You don't browse. You recognise. State: I can't stop. State: Everything is falling apart. Pick the protocol that matches.</p>
+    </div>
 
-   <div class="stack-grid">
-  <div class="stack-item">
-    <img src="images/interrupt.jpg" class="product-img" alt="INTERRUPT">
-    <div class="stack-content">
-      <h3>INTERRUPT</h3>
-      <p class="product-sub">Stop the pattern immediately</p>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div class="step-title">EXECUTE</div>
+      <p class="step-text">Pay. Get instant access. Complete the live protocol. No waiting. No homework. The interruption happens in real time.</p>
     </div>
-    <div class="stack-footer">
-      <a href="https://buy.stripe.com/7sY3cwaGrct1eVFc6m3oA0b" class="buy-btn">$29 • START</a>
-      <p class="micro">Start immediately. No thinking.</p>
-    </div>
-  </div>
 
-  <div class="stack-item">
-    <img src="images/stabilise.jpg" class="product-img" alt="STABILISE">
-    <div class="stack-content">
-      <h3>STABILISE</h3>
-      <p class="product-sub">Regain control in minutes</p>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div class="step-title">LOCK</div>
+      <p class="step-text">Submit. Receive your locked protocol in 12hrs. Reply with photo evidence to unlock THE HUMAN STACK™ BOX with physical instruments.</p>
     </div>
-    <div class="stack-footer">
-      <a href="#" class="buy-btn">$39 • START</a>
-      <p class="micro">Slow it down. Regain control.</p>
-    </div>
-  </div>
+  </section>
 
-  <div class="stack-item">
-    <img src="images/decide.jpg" class="product-img" alt="DECIDE">
-    <div class="stack-content">
-      <h3>DECIDE</h3>
-      <p class="product-sub">You already know what to do</p>
-    </div>
-    <div class="stack-footer">
-      <a href="#" class="buy-btn">$49 • START</a>
-      <p class="micro">Choose. Move forward.</p>
-    </div>
-  </div>
-
-  <div class="stack-item">
-    <img src="images/focus.jpg" class="product-img" alt="FOCUS">
-    <div class="stack-content">
-      <h3>FOCUS</h3>
-      <p class="product-sub">Lock onto one task. Finish it.</p>
-    </div>
-    <div class="stack-footer">
-      <a href="#" class="buy-btn">$49 • START</a>
-      <p class="micro">One task. No drift.</p>
-    </div>
-  </div>
-
-  <div class="stack-item featured">
-    <img src="images/execute.jpg" class="product-img" alt="EXECUTE">
-    <div class="stack-content">
-      <h3>EXECUTE</h3>
-      <p class="product-sub">Start immediately. No delay.</p>
-    </div>
-    <div class="stack-footer">
-      <a href="execution.html" class="buy-btn">$59 • START</a>
-      <p class="micro">Start now. No delay.</p>
-    </div>
-  </div>
-
-  <div class="stack-item">
-    <img src="images/reclaim.jpg" class="product-img" alt="RECLAIM">
-    <div class="stack-content">
-      <h3>RECLAIM</h3>
-      <p class="product-sub">Take it back. Fully.</p>
-    </div>
-    <div class="stack-footer">
-      <a href="#" class="buy-btn">$69 • START</a>
-      <p class="micro">Take it back. Fully.</p>
-    </div>
-  </div>
-    </div>
-  </div>
-</section>
-
-<section class="reveal-section">
-  <h2>OPEN THE SYSTEM</h2>
-  <p class="section-intro">This isn’t a box you read. It’s a system you enter.</p>
-  <div class="reveal-grid">
-    <div class="reveal-item">
-      <span>01</span>
-      <h4>You open it</h4>
-      <p>No clutter. No noise. Just the system in front of you.</p>
-    </div>
-    <div class="reveal-item">
-      <span>02</span>
-      <h4>You recognise the state</h4>
-      <p>It becomes obvious where you are—and what to do next.</p>
-    </div>
-    <div class="reveal-item">
-      <span>03</span>
-      <h4>You act immediately</h4>
-      <p>No thinking. The system moves you.</p>
-    </div>
-    <div class="reveal-item">
-      <span>04</span>
-      <h4>You reset</h4>
-      <p>You don’t spiral. You regain control.</p>
-    </div>
-  </div>
-</section>
-
-<section class="inside-horizontal">
-  <div class="inside-wrap">
-    <div class="inside-visual">
-      <img src="images/human-stack-dark.jpg" alt="The Human Stack System">
-    </div>
-    <div class="inside-content">
-      <h2>WHAT’S INSIDE THE BOX</h2>
-      <p class="inside-sub">A physical system designed to move you from state → action.</p>
-      <div class="inside-points">
-        <span>Clear protocol</span>
-        <span>Immediate direction</span>
-        <span>Physical trigger</span>
-        <span>State reset</span>
-        <span>Reinforcement layer</span>
-        <span>Built-in follow-through</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="testimonials">
-  <div class="container">
-    <h2 class="section-title">WHAT HAPPENS WHEN YOU USE IT</h2>
-    <p class="section-intro">Used daily by people who don’t have time to drift.</p>
-    <div class="testimonial-grid">
-      <div class="testimonial">
-        <p class="quote">“CONTROL IS A CHOICE isn’t a slogan. It actually worked.”</p>
-        <p class="author">Jordan M. — SaaS Founder</p>
-      </div>
-      <div class="testimonial">
-        <p class="quote">“I don’t need more time. I need to be more me.”</p>
-        <p class="author">Aisha K. — Teacher & Mum</p>
-      </div>
-      <div class="testimonial">
-        <p class="quote">“This is implementation. Best ROI I’ve seen.”</p>
-        <p class="author">Marcus T. — Consultant</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="cta">
-  <div class="final-contact">
-    <p>Questions before you start?</p>
-    <a href="mailto:hello@humanlabofficial.com">hello@humanlabofficial.com</a>
-  </div>
-</section>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2026 THE HUMAN LAB — BEHAVIOURAL CONTROL SYSTEMS</p>
+    <p style="margin-top:8px">NOT THERAPY. NOT COACHING. INTERVENTION.</p>
+  </footer>
 
 </body>
 </html>
