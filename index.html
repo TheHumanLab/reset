@@ -259,13 +259,14 @@
     }
     
     /* PROTOCOLS */
-    .protocol-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
-      gap:1px;
-      background:var(--divider);
-      margin-top:64px;
-      box-shadow:0 8px 32px rgba(0,0,0,0.3);
+ .protocol-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+
     }
     .protocol{
       background:linear-gradient(135deg, var(--bg) 0%, var(--bg-dark) 100%);
